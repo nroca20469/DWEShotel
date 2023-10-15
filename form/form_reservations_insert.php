@@ -40,8 +40,8 @@
                         </input>
                     </div>
                     <div class="mb-3">
-                        <label for="customerName" class="form-label">Surename</label>
-                        <input type="text" class="form-control" id="surename" name="surename"> 
+                        <label for="surName" class="form-label">Surname</label>
+                        <input type="text" class="form-control" id="surname" name="surname"> 
                     </div>
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Lastname</label>

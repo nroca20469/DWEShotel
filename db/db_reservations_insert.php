@@ -10,8 +10,11 @@
     echo "<p>" . $room_num . "</p>"; 
     $room_price = $_POST['roomPrice'];
     echo $room_price; 
-    $surename = $_POST['surename'];
+    $surname = $_POST['surname'];
+    echo $surname;
     $lastname = $_POST['lastname'];
+    echo $lastname;
+    $customer_id = null;
 
     //Connect database 
     include('connect_db.php');
@@ -19,24 +22,37 @@
 
 
     //Fetch data
-        if($lastname != null && $surename != null){
+        if($lastname != null && $surname != null){
             $sql_customer_id = "SELECT customer_id
-            FROM 045_customers
-            WHERE room_number NOT IN (SELECT room_number
-                                        FROM 045_reservations
-                                        WHERE date_in < $date_out
-                                        AND date_out > $date_in)
-            GROUP BY room_category
-            ORDER BY room_price ASC;";
-            $result = mysqli_query($conn, $sql);
-            $reservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            FROM `045_customers`
+            WHERE customer_surname = \"" . $surname . "\"
+            AND customer_lastname = \"" . $lastname . "\""   ;
+            $result_cust_id = mysqli_query($conn, $sql_customer_id);
+            $reservations = mysqli_fetch_all($result_cust_id, MYSQLI_ASSOC);
+            echo "<br> hi <br>";
+        }
 
-            //Show data
-            foreach ($reservations as $res){
-                echo $res['room_number'] . ' ' . $res['room_category'] . ' ' .  $res['room_price'];
-                echo '<br>'; 
-            }
+        foreach ($reservations as $res){
+            $customer_id = $res['customer_id'];
+            echo $res['customer_id'];
+            echo '<br>'; 
+            echo $customer_id;
+        }
+
+    //Insert data
+        if(isset($customer_id)){
+            $sql_insert_reservation = "INSERT INTO `045_reservations`
+            (customer_id, preselected_room, room_price, reservation_status, date_in, date_out) 
+            VALUES (" . $customer_id . ", " . $room_num . " , " . $room_price . ", 'booked',  '" . $date_in . "' , '" . $date_out . "' );
+            ";
+            if ($conn->query($sql_insert_reservation) === TRUE) {
+                echo "New record created successfully";
+              } else {
+                echo "Error: " . $sql_insert_reservation . "<br>" . $conn->error;
+              }
+
+            echo 'done';
         }
 ?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?> 

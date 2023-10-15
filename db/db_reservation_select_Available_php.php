@@ -21,12 +21,12 @@
         if($date_in != null && $date_out != null){
              $sql = "SELECT room_number, room_category, room_price
             FROM 045_rooms
-            WHERE room_number NOT IN (SELECT room_number
+            WHERE room_number NOT IN (SELECT preselected_room
                                         FROM 045_reservations
-                                        WHERE date_in < $date_out
-                                        AND date_out > $date_in)
+                                        WHERE date_in < '{$date_out}'
+                                        AND date_out > '{$date_in}')
             GROUP BY room_category
-            ORDER BY room_price ASC;";
+            ORDER BY room_number;";
             $result = mysqli_query($conn, $sql);
             $reservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -230,9 +230,9 @@
     
                     <h5>Price</h5> 
                     <p> " . $reservations[1]['room_price'] . "</p>
-                    <br> 
-                    <p>Room number:" . $reservations[1]['room_number'] . "</p>
-                    <a href=\"http://localhost/student045/dwes/form/form_reservations_insert.php\" class=\"pull-right\">";
+                        
+                    <br>
+                    ";
                     $room_num = $reservations[1]['room_number'];
                     $room_price = $reservations[1]['room_price'];
                         include $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'; 
@@ -331,13 +331,13 @@
     
                     <h5>Price</h5> 
                     <p> " . $reservations[2]['room_price'] . "</p>
-                    <br> 
-                    <p>Room number:" . $reservations[2]['room_number'] . "</p>
-                    <a href=\"http://localhost/student045/dwes/form/form_reservations_insert.php\" class=\"pull-right\">";
+                        
+                    <br>
+                    ";
                     $room_num = $reservations[2]['room_number'];
                     $room_price = $reservations[2]['room_price'];
                         include $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'; 
-                       
+                        
                 echo " </a> 
                 </div>
             </div> ";
@@ -367,6 +367,7 @@
                 </div>    
             </div>";
         }    
+    
     ?>
    
 
