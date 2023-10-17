@@ -88,7 +88,7 @@
                     <p>Guests who prefer to stay in their own room will enjoy the Single Rooms at Hotel Maribel Menorca which come highly recommended. Experience unbeatable privacy during your holiday in Arenal, Menorca in these rooms which provide a single bed, 50” TV with international channels, free Wi-Fi, private bathroom with a hairdryer and toiletries, desk, telephone, wake-up service, mirror with a magnifying area and a full body mirror, and a balcony with exterior views.</p>
                     
                     <!-- Button trigger modal -->
-                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#SingleAmenities\">Look amenities</a>
+                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#SingleAmenities\">Look amenities</a><br>
                     <!-- Modal -->
                     <div class=\"modal fade\" id=\"SingleAmenities\" tabindex=\"-1\" aria-labelledby=\"SingleAmenitiesLabel\" aria-hidden=\"true\">
                     <div class=\"modal-dialog\">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     </div>
-                    <h5>Price</h5> 
+                    <br><h5>Price per night</h5> 
                     <p> " . $reservations[0]['room_price'] . "</p>
                         
                     <br>
@@ -192,7 +192,7 @@
                     exterior views</p>
                     
                     <!-- Button trigger modal -->
-                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#DoubleAmenities\">Look amenities</a>
+                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#DoubleAmenities\">Look amenities</a><br>
                     <!-- Modal -->
                     <div class=\"modal fade\" id=\"DoubleAmenities\" tabindex=\"-1\" aria-labelledby=\"DoubleAmenitiesLabel\" aria-hidden=\"true\">
                     <div class=\"modal-dialog\">
@@ -228,7 +228,7 @@
                     </div>
                     </div>
     
-                    <h5>Price</h5> 
+                    <br><h5>Price per night</h5> 
                     <p> " . $reservations[1]['room_price'] . "</p>
                         
                     <br>
@@ -239,7 +239,8 @@
                         
                 echo " </a> 
                 </div>
-            </div> ";
+
+                </div> ";
              
             echo "
             <!-- Suite -->
@@ -293,7 +294,7 @@
                     natural light, 1 television and a minimalist design decorated in light tones and functional details.</p>
                     
                     <!-- Button trigger modal -->
-                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#SuiteAmenities\">Look amenities</a>
+                        <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#SuiteAmenities\">Look amenities</a><br>
                     <!-- Modal -->
                     <div class=\"modal fade\" id=\"SuiteAmenities\" tabindex=\"-1\" aria-labelledby=\"SuiteAmenitiesLabel\" aria-hidden=\"true\">
                     <div class=\"modal-dialog\">
@@ -328,8 +329,8 @@
                         </div>
                     </div>
                     </div>
-    
-                    <h5>Price</h5> 
+                    
+                    <br><h5>Price per night</h5> 
                     <p> " . $reservations[2]['room_price'] . "</p>
                         
                     <br>
