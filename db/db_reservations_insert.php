@@ -46,12 +46,10 @@
             VALUES (" . $customer_id . ", " . $room_num . " , " . $room_price . ", 'booked',  '" . $date_in . "' , '" . $date_out . "' );
             ";
             if ($conn->query($sql_insert_reservation) === TRUE) {
-                echo "New record created successfully";
+                echo "Your room is now booked";
               } else {
-                echo "Error: " . $sql_insert_reservation . "<br>" . $conn->error;
+                echo "Your room is not booked, see if there is any problem with your data";
               }
-
-            echo 'done';
         }
 ?>
 

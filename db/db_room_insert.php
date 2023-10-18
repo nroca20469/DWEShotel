@@ -16,8 +16,8 @@
              -Room-Ammenities --> se guarda UN SOLO VALOR, ver como guardar mas de uno
         */ 
 
-        $room_number = null;
-        $room_type = null;
+        $room_number;
+        $room_type;
         $room_state;
         $room_price;
         $room_status;
@@ -90,16 +90,37 @@
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
                 return;
             }
+        
+
+            //Connect to db
+            include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
+            
+            //Comprovate that the room doesnt exist
+            $sql_room = "SELECT room_number
+            FROM `045_rooms`
+            WHERE room_number = $room_number";
+            $result_room_num = mysqli_query($conn, $sql_room);
+            $room_number_exists = mysqli_fetch_all($result_room_num, MYSQLI_NUM);
+            if($room_number_exists != null) {
+                echo "<br>The room already exists";
+            } else {
+        
+            //Create room2
+            $sql_insert_room = "INSERT INTO 045_rooms 
+            (room_number, room_category, room_state, room_status, room_price, room_description)
+            VALUES 
+            ($room_number, '$room_type', '$room_state', '$room_status', $room_price, '$room_ammenities')"; 
+            
+            //Show that it has been created
+            if ($conn->query($sql_insert_room) === TRUE) {
+                echo "Your room is now created";
+              } else {
+                echo "Your room is not created, see if there is any problem with your data";
+              }
+            }
+
+        
         }
-
-        //Connect to db
-        include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php')
-        
-        //Comprovate that the room doesnt exist
-        //Create room
-
-        //Show that it has been created
-        
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

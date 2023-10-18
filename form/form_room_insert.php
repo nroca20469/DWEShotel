@@ -53,7 +53,7 @@
                         <option selected value=""> Open select menu </option>
                         <option value="dirty"> Dirty </option>
                         <option value="clean"> Clean </option>
-                        <option value="maint"> Maintenance </option>
+                        <option value="maintenance"> Maintenance </option>
                     </select>
                 </div>
                 <div class="mb-3">

@@ -12,13 +12,15 @@
         //Sql Query
         $sql = "SELECT *
             FROM 045_rooms";
-            $result = mysqli_query($conn, $sql);
-            $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $result = mysqli_query($conn, $sql);
+        $rooms = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         //Show results
         echo '<div class="ms-4">';
         foreach ($rooms as $room){
             echo ($room['room_number'] . ' ' . $room['room_category'] . ' ' . $room['room_price']);
+            include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_update.php');
+            include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_delete.php');
             echo '<br>';
         }
         echo '</div>';  
