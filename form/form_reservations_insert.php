@@ -5,6 +5,7 @@
         Book
     </button>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="bookRoom" tabindex="-1" aria-labelledby="bookRoomLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -1,11 +1,10 @@
-
 <div class="container-lg">
     <div class="text-center">
                 <h2>Do you wanna come?</h2>
                 <p class="lead">Tell us when are you willing to come</p>
             </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="db/db_reservation_select_Available_php.php" method="POST">
+            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_reservation_select_availables.php" method="POST">
                 <div class="mb-3">
                     <label for="dateIn" class="form-label">Date in</label>
                     <input type="date" class="form-control" id="dateIn" name="dateIn">
@@ -20,6 +19,7 @@
             </form>
         </div>
     </div>
-
-    
 </div>
+    
+
+  

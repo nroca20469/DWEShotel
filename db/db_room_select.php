@@ -19,8 +19,8 @@
         echo '<div class="ms-4">';
         foreach ($rooms as $room){
             echo ($room['room_number'] . ' ' . $room['room_category'] . ' ' . $room['room_price']);
-            include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_update.php');
-            include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_delete.php');
+            echo "<a href=\"http://localhost/student045/dwes/form/form_room_update.php\"><button class=\"btn btn-secondary ms-4\">Update</button></a>";
+            echo "<a href=\"http://localhost/student045/dwes/db/db_room_delete.php\"><button class=\"btn btn-secondary ms-4\">Delete</button></a>";
             echo '<br>';
         }
         echo '</div>';  

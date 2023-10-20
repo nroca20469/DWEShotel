@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_select.php')?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_select_index.php')?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
     

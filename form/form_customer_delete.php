@@ -1,9 +1,33 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-secondary ms-4" data-bs-toggle="modal" data-bs-target="#deleteCustomer">
-    Delete
-</button>
+<!DOCTYPE html>
+<html lang="en">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
-<!-- Modal -->
+    <div class="container-fluid pt-4">
+        <div class="text-center">
+                <h2>Delete a Customer</h2>
+                <p class="lead">or do you wanna change the status?</p>
+        </div>
+        <div class="row justify-content-center my-5">
+            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_delete.php" action="form_customer_update.php" method="POST">
+                <div class="mb-3">
+                    <label for="customerID" class="form-label">Customer ID</label>
+                    <input type="text" class="form-control" id="customerID" name="customerID">
+                </div>
+                <div class="d-grid gap-2 col-4 mx-auto m-2">
+                    <div class="btn-group">
+                        <a href="http://localhost/student045/dwes/db/db_customer_delete.php">
+                            <button class="btn btn-secondary m-2" type="submit"> Submit </button>
+                        </a>
+                        <a href="http:form_customer_update.php">
+                            <button type="submit" class="btn btn-secondary m-2" name="status"> Change status </button>
+                        </a> 
+                    </div>   
+                </div>
+            </form>
+        </div>
+    </div>
+<!--
+</div>
 <div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="deletCustomerLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -29,8 +53,13 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_delete_sure.php')?> <!-- revisar -->
+                 Falta el boton de revisar si esta seguro 
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
+
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
+    
+</html>

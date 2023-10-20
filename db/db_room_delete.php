@@ -15,11 +15,21 @@
     WHERE room_number = $room_number AND room_category = '$room_type'";
     
     $result = mysqli_query($conn, $sql_comprovar);
-    if($result[0] != null && $result != 'undefined' && isSet($result) && $result != '0'){ //NO FUNCIONA REVSAR!!
+    if( ($result->num_rows) == 0){ 
         echo 'Can be deleted';
+        $deleted = true;
     } else {
         echo 'null  ';
+        $deleted = false;
     }
+
+   /* if($deleted == true){
+        $sql_delete_room = "DELETE FROM `045_rooms` 
+        WHERE room_number = $room_number
+        AND room_category = '$room_type'";
+    } else {
+        echo 'Can not be deleted';
+    }*/
   
 
 ?>
