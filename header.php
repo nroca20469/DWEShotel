@@ -52,12 +52,12 @@
                     <ul class="dropdown-menu">
                         <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_customer_select.php')?></li>
                         <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_customer_insert.php">Insert</a></li>
-                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_customer_update.php">Update</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_customer_update_call.php">Update</a></li>
                         <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_customer_delete.php">Delete</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/student045/dwes/form/form_reservations_select.php">Reserve now</a>
+                    <a class="nav-link" href="http://localhost/student045/dwes/form/form_reservation_select.php">Reserve now</a>
                 </li>
                 <li class="nav-item d-md-none">
                     <a class="nav-link" href="#pricing">Log in</a>
