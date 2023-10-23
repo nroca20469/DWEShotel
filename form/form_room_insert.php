@@ -40,14 +40,6 @@
                     </div>
                 </div> 
                 <div class="mb-3">
-                   <!-- <label for="roomState" class="form-label">Room State</label>
-                    <select class="form-select" aria-label="Default select example" id="roomState" name="roomState">
-                        <option selected>Open this select menu</option>
-                        <option value="1">Dirty</option>
-                        <option value="2">Clean</option>
-                        <option value="3">Maintenance</option>
-                    </select> -->
-
                     <label for="roomState" class="form-label"> Room State </label>
                     <select class="form-select" aria-label="Default select example" id="roomState" name="roomState">
                         <option selected value=""> Open select menu </option>
@@ -55,28 +47,7 @@
                         <option value="clean"> Clean </option>
                         <option value="maintenance"> Maintenance </option>
                     </select>
-                </div>
-                <div class="mb-3">
-                    <label for="roomAmmen" class="form-label">Room Ammenities</label>
-                    <div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="roomAmmen" value="tv" name="roomAmmen">
-                            <label class="form-check-label" for="inlineCheckbox1">TV</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="airConditioning" name="roomAmmen">
-                            <label class="form-check-label" for="inlineCheckbox2">Air Conditioning</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="wifi" name="roomAmmen">
-                            <label class="form-check-label" for="inlineCheckbox3"> Wifi </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="extraBed" name="roomAmmen">
-                            <label class="form-check-label" for="inlineCheckbox3"> Extra Bed Possible </label>
-                        </div>
-                    </div>
-                </div>
+                </div>  
                 <div class="mb-3">  
                     <label for="bedType" class="form-label">Bed Type</label>
                     <select class="form-select" aria-label="Default select example" id="bedType" name="bedType">

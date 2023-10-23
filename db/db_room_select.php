@@ -19,8 +19,12 @@
         echo '<div class="ms-4">';
         foreach ($rooms as $room){
             echo ($room['room_number'] . ' ' . $room['room_category'] . ' ' . $room['room_price']);
-            echo "<a href=\"http://localhost/student045/dwes/form/form_room_update.php\"><button class=\"btn btn-secondary ms-4\">Update</button></a>";
-            echo "<a href=\"http://localhost/student045/dwes/db/db_room_delete.php\"><button class=\"btn btn-secondary ms-4\">Delete</button></a>";
+            echo "<div><form action = \"http://localhost/student045/dwes/form/form_room_update.php\" method = \"POST\">
+                <input name=\"roomNumber\" value = \"" . $room['room_number'] . "\" hidden>
+            <button class=\"btn btn-secondary\" type = \"submit\">Update</button></form> 
+            <form action = \"http://localhost/student045/dwes/db/db_room_delete.php\" method = \"POST\">
+                <input name=\"roomNumber\" value = \"" . $room['room_number'] . "\" hidden>
+            <button class=\"btn btn-secondary ms-40\" type = \"submit\">Delete</button></form></div>";
             echo '<br>';
         }
         echo '</div>';  

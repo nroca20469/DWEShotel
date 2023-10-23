@@ -36,7 +36,7 @@
             echo '<br>';
             if(!empty($_POST['roomPrice'])) {
                 $room_price = $_POST['roomPrice'];
-                echo 'You have chosen: ' . $room_price;
+                echo 'You have chosen for room price: ' . $room_price;
             } else {
                 echo 'Please select a value for the Room Price . <br>';
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
@@ -45,7 +45,7 @@
             echo '<br>';
             if(!empty($_POST['roomType'])) {
                 $room_type = $_POST['roomType'];
-                echo 'You have chosen: ' . $room_type;
+                echo 'You have chosen for room  type: ' . $room_type;
             } else {
                 echo 'Please select a value for the Room Type. <br>';
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
@@ -54,7 +54,7 @@
             echo '<br>';
             if(!empty($_POST['roomStatus'])) {
                 $room_status = $_POST['roomStatus'];
-                echo 'You have chosen: ' . $room_status;
+                echo 'You have chosen for room status: ' . $room_status;
             } else {
                 echo 'Please select a value for the Room Status .';
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
@@ -64,7 +64,7 @@
             echo '<br>';
             if(!empty($_POST['roomState'])) {
                 $room_state = $_POST['roomState'];
-                echo 'You have chosen: ' . $room_state;
+                echo 'You have chosen for room state: ' . $room_state;
             } else {
                 echo 'Please select a value for the Room State. <br>';
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
@@ -72,19 +72,9 @@
             }
         
             echo '<br>';
-            if(!empty($_POST['roomAmmen'])) {
-                $room_ammenities = $_POST['roomAmmen'];
-                echo 'You have chosen: ' . $room_ammenities;
-            } else {
-                echo 'Please select a value for the Room Ammenities. <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
-        
-            echo '<br>';
             if(!empty($_POST['bedType'])) {
                 $bed_type = $_POST['bedType'];
-                echo 'You have chosen: ' . $bed_type;
+                echo 'You have chosen for bed type: ' . $bed_type;
             } else {
                 echo 'Please select a value for the Bed Type. <br>';
                 echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
@@ -104,9 +94,45 @@
             if($room_number_exists != null) {
                 echo "<br>The room already exists";
             } else {
-        
+                switch($room_type){
+                    case 'single':
+                        $room_ammenities = '{
+                            "TV": true,
+                            "Air Conditioning": true,
+                            "Wifi": true,
+                            "extra bed":true,
+                            "bed type": "'. $bed_type . '",
+                            "bed price per night": 100
+                        }';
+                        break;
+                    
+                    case 'double':
+                        $room_ammenities = '{
+                            "TV": true,
+                            "Air Conditioning": true,
+                            "Wifi": true,
+                            "Terrace": true,
+                            "extra bed":true,
+                            "bed type":"'. $bed_type . '",
+                            "bed price per night": 200
+                        }';
+                        break;
+
+                    case 'suite':
+                        $room_ammenities = '{
+                            "TV": true,
+                            "Air Conditioning": true,
+                            "Wifi": true,
+                            "Terrace": true,
+                            "extra bed":true,
+                            "bed type":"'. $bed_type . '",
+                            "bed price per night": 150
+                        }';
+                        break;
+               }
+
             //Create room2
-            $sql_insert_room = "INSERT INTO 045_rooms 
+            $sql_insert_room = "INSERT INTO `045_rooms` 
             (room_number, room_category, room_state, room_status, room_price, room_description)
             VALUES 
             ($room_number, '$room_type', '$room_state', '$room_status', $room_price, '$room_ammenities')"; 
