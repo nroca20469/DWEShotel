@@ -19,19 +19,19 @@ include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
 
 //Query to select the customer
 $query_customer_update = "UPDATE `045_customers` 
-SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`$customer_dni`='customer_dni',`customer_email`='$customer_email',
+SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
 `customer_phone_number`='$customer_phone_number',`customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
-WHERE customer_id = $customer_id";
+WHERE `customer_id` = $customer_id";
 
 //  $connect = mysqli_query($conn, $query_customer);
 
 if ($conn->query($query_customer_update) === TRUE) {
-    $boton_aviso = "Customer Inserted";
+    $boton_aviso = "Customer Updated";
 } else {
     $boton_aviso = "Error inserting customer, please try later";
 }
 
-echo $boton_aviso;
+echo '<br>' . $boton_aviso;
 
 
 ?>

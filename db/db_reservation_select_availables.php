@@ -25,6 +25,7 @@
                                         FROM 045_reservations
                                         WHERE date_in < '{$date_out}'
                                         AND date_out > '{$date_in}')
+            AND room_status = 1
             GROUP BY room_category
             ORDER BY room_number;";
             $result = mysqli_query($conn, $sql);

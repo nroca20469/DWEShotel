@@ -1,27 +1,28 @@
+<!-- No hacer con modal, sino con el que sale texto en un cuadrito indicando si esta seguro sin un pop up, 
+sino con un pequeño texto saliendo del boton i que pregunte -->
 
-<!DOCTYPE html>
-<html lang="en">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary ms-4" data-bs-toggle="modal" data-bs-target="#deleteRoom">
+    Delete
+</button>
 
-    <div class="container-lg">
-            <div class="text-center">
-                  <h2>Insert a room</h2>
+<!-- Modal -->
+<div class="modal fade" id="deleteRoom" tabindex="-1" aria-labelledby="deleteRoomLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteRoomLabel">Are you sure? </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="row justify-content-center my-5">
-                <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_room_delete.php" method="POST">
-                    <div class="mb-3">
-                        <h5>Delete Room</h5>
-                        <div class="mb-3">
-                            <label for="roomNumber" class="form-label">Room Number</label>
-                            <input type="number" class="form-control" id="roomNumber" name="roomNumber"> </input>
-                        </div>
-                    </div>
-                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_delete_sure.php')?> 
-                </form>
+
+            <div class="modal-body">
+                Are you concient that by deleting this room it will be deleted from the database, this action will be impossible to undo
             </div>
+
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">I'm sure</button>  
+            </div>
+        </div>
     </div>
-
-
-
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>
+</div>

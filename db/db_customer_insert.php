@@ -11,6 +11,7 @@
             $phone_number  = $_POST['customerNumberPhone'];
             $vip  = $_POST['vip'];
             $problematic = $_POST['problematic'];
+            $online_user = $email;
 
             echo $surname . ' ' . $lastanme . ' ' . $customer_dni . '<br>' . $email . '<br>' . $phone_number  . '<br>VIP ' . $vip;
 
@@ -34,9 +35,9 @@
         //SQL Insert
             if($insert == 1){
                 $sqlInserCustomer = "INSERT INTO `045_customers`
-                (`customer_forename`, `customer_lastname`, `customer_dni`, `customer_email`, `customer_phone_number`, `customer_description`, `customer_status`) 
+                (`customer_forename`, `customer_lastname`, `customer_dni`, `customer_email`, `customer_phone_number`, `customer_description`, `customer_status`, `online_user`) 
                 VALUES 
-                ('$surname','$lastanme','$customer_dni','$email','$phone_number','{\n\"vip\": $vip,\n\"problematic\": $problematic \n}',1);";
+                ('$surname','$lastanme','$customer_dni','$email','$phone_number','{\n\"vip\": $vip,\n\"problematic\": $problematic \n}',1, \"$online_user\");";
 
                 // $isDeleted = mysqli_query($conn, $sqlDeleteCustomer);
                 echo 'funciona';

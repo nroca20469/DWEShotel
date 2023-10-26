@@ -8,7 +8,7 @@
                 <p class="lead">or do you wanna change the status?</p>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_delete.php" action="form_customer_update.php" method="POST">
+            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_delete.php" method="POST">
                 <div class="mb-3">
                     <label for="customerID" class="form-label">Customer ID</label>
                     <input type="text" class="form-control" id="customerID" name="customerID">
@@ -17,10 +17,7 @@
                     <div class="btn-group">
                         <a href="http://localhost/student045/dwes/db/db_customer_delete.php">
                             <button class="btn btn-secondary m-2" type="submit"> Submit </button>
-                        </a>
-                        <a href="http:form_customer_update.php">
-                            <button type="submit" class="btn btn-secondary m-2" name="status"> Change status </button>
-                        </a> 
+                        </a>    
                     </div>   
                 </div>
             </form>

@@ -41,8 +41,8 @@
                     <ul class="dropdown-menu">
                         <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_select.php')?></li>
                         <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_room_insert.php">Insert</a></li>
-                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_room_update.php">Update</a></li>
-                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_room_delete.php">Delete</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_room_update_call.php">Update</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_room_delete_call.php">Delete</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,15 +56,23 @@
                         <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_customer_delete.php">Delete</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Reservations
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/db/db_reservations_select.php">Select</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_reservations_insert.php">Insert</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_reservations_update_call.php">Update</a></li>
+                        <li><a class="dropdown-item" href="http://localhost/student045/dwes/form/form_reservations_delete_call.php">Delete</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost/student045/dwes/form/form_reservation_select.php">Reserve now</a>
                 </li>
-                <li class="nav-item d-md-none">
-                    <a class="nav-link" href="#pricing">Log in</a>
-                </li>
                 <li class="nav-item ms-2 d-none d-md-inline">
-                    <a class="btn btn-secondary" href="#">Log in</a>
-                </li>
+                    <a class="btn btn-secondary" href="http://localhost/student045/dwes/form/form_login.php">Log in</a>
+                </li> 
                 
                 </ul>
             </div>
