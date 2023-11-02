@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <div class="container-lg mt-4 pt-2">
     <div class="text-center">
@@ -11,7 +9,7 @@
             <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_login.php" method="POST">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com" pattern="[@]{1,15}" title="Please put an @">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com" pattern="{@}" title="Please put an @">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
@@ -37,6 +35,4 @@
     </div>
 </div>
     
-
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

@@ -16,7 +16,7 @@
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
                     <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
                 </div>
-            </form>
+            </form> 
         </div>
     </div>
 </div>

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <?php
@@ -23,7 +22,7 @@
 
             //SQL to chech if the customer exists 
             $sqlCheckCustomer = "SELECT (customer_id) 
-            FROM 045_customers
+            FROM 045_users
             WHERE customer_id = $customer_id;";
              
             $exists = mysqli_query($conn, $sqlCheckCustomer);
@@ -52,4 +51,3 @@
 
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>

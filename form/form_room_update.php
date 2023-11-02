@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
 <?php 
 
@@ -144,6 +142,10 @@ $tv = $room_desciption_array -> TV;
                 </div>  
                 </div>
 
+                <?php
+                    $json = json_decode($room_description, true);
+                    var_dump($json);    
+                ?>
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
                     <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
                 </div>
@@ -153,7 +155,3 @@ $tv = $room_desciption_array -> TV;
     <?php } ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-            
-
-
-</html>

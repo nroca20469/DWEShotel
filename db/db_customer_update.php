@@ -18,7 +18,7 @@ echo $customer_forename . ' ' . $customer_lastname . ' ' . $customer_email . ' '
 include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
 
 //Query to select the customer
-$query_customer_update = "UPDATE `045_customers` 
+$query_customer_update = "UPDATE `045_users` 
 SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
 `customer_phone_number`='$customer_phone_number',`customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
 WHERE `customer_id` = $customer_id";

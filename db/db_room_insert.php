@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <?php 
@@ -24,13 +23,14 @@
         $bed_type;
         $room_ammenities;
 
+        $link_room_insert = $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/db_reservations_insert.php';
         if(isset($_POST['submit'])){
             if(!empty($_POST['roomNum'])) {
                 $room_number = $_POST['roomNum'];
                 echo 'You have chosen: ' . $room_number;
             } else {
                 echo 'Please select a value for the Room Number . <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
+                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='$link_room_insert'\">Go Back</button>");
                 return;
             }
             echo '<br>';
@@ -150,5 +150,3 @@
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-    
-    </html>

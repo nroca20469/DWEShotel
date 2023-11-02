@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-    <html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
 <?php 
@@ -80,6 +79,15 @@ if($connect->num_rows == 0){
         </div>
         <div class="row justify-content-center my-5">
             <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_room_update.php" method="POST">
+                <div class="mb-3">
+                    <label for="reservationNum" class="form-label" >Reservation Number</label>
+                    <input type="numeric" class="form-control" name="reservationNum" value="<?php echo $reservation_number; ?>" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="preselectedRoom" class="form-label" >Preselected Room</label>
+                    <input type="numeric" class="form-control" name="preselectedRoom" value="<?php echo $preselected_room; ?>" readonly>
+                </div>
 
                 <div class="mb-3">
                     <label for="roomNum" class="form-label">Room Number</label>
@@ -87,26 +95,46 @@ if($connect->num_rows == 0){
                 </div>
 
                 <div class="mb-3">
-                    <label for="roomPrice" class="form-label">Price per night</label>
+                    <label for="roomPrice" class="form-label">Price</label>
                     <input type="numeric" class="form-control" id="roomPrice" name="roomPrice" value="<?php echo $room_price; ?>">
                 </div> 
 
+                
+
                 <div class="mb-3">
-                    <label for="roomType" class="form-label">Type</label>
-                    <select class="form-select" aria-label="Room Type"  name="roomType" id="roomType" type="select">
+                    <label for="reservationStatus" class="form-label">Reservation Status</label>
+                    <select class="form-select" aria-label="Reservation Status"  name="reservationStatus" type="select">
                         <?php 
-                            if($room_category == 'single'){
-                                echo "<option value=\"single\" selected > Single </option>
-                                <option value=\"double\"> Double </option>
-                                <option value=\"suite\"> Suite </option>";
-                            } else if($room_category == 'double') {
-                                echo "<option value=\"single\"> Single </option>
-                                <option value=\"double\" selected > Double </option>
-                                <option value=\"suite\"> Suite </option>";
-                            } else if($room_category == 'suite'){
-                                echo "<option value=\"single\"> Single </option>
-                                <option value=\"double\"> Double </option>
-                                <option value=\"suite\" selected > Suite </option>";
+                            if($reservation_status == 'booked'){
+                                echo "<option value=\"booked\" selected > Booked </option>
+                                <option value=\"check_in\"> Check in </option>
+                                <option value=\"check_out\"> Check out </option>
+                                <option value=\"absent\"> Absent </option>
+                                <option value=\"cancelled\"> Cancelled </option>";
+                            } else if($reservation_status == 'check_in') {
+                                echo "<option value=\"booked\"> Booked </option>
+                                <option value=\"check_in\" selected> Check in </option>
+                                <option value=\"check_out\"> Check out </option>
+                                <option value=\"absent\"> Absent </option>
+                                <option value=\"cancelled\"> Cancelled </option>";
+                            } else if($reservation_status == 'check_out'){
+                                echo "<option value=\"booked\"> Booked </option>
+                                <option value=\"check_in\"> Check in </option>
+                                <option value=\"check_out\" selected> Check out </option>
+                                <option value=\"absent\"> Absent </option>
+                                <option value=\"cancelled\"> absent </option>";
+                            }else if($reservation_status == 'check_out'){
+                                    echo "<option value=\"booked\"> Booked </option>
+                                    <option value=\"check_in\"> Check in </option>
+                                    <option value=\"check_out\" > Check out </option>
+                                    <option value=\"absent\" selected> Absent </option>
+                                    <option value=\"cancelled\"> Cancelled </option>";
+                            }else if($reservation_status == 'cancelled'){
+                                echo "<option value=\"booked\"> Booked </option>
+                                <option value=\"check_in\"> Check in </option>
+                                <option value=\"check_out\"> Check out </option>
+                                <option value=\"absent\"> Absent </option>
+                                <option value=\"cancelled\" selected> Cancelled </option>";
                             } else {
                                 echo "<option value=\"\" selected> Select an option </option>
                                 <option value=\"single\"> Single </option>
@@ -115,72 +143,24 @@ if($connect->num_rows == 0){
                             }
                         ?>
                     </select>
-                </div> 
-
-                <div class="mb-3">
-                    <label for="roomStatus" class="form-label">Room Status</label>
-                    <div>
-                        <?php
-                            if($room_status == 1){
-                                echo "<div class=\"form-check form-check-inline\">
-                                        <input class=\"form-check-input\" type=\"checkbox\" id=\"roomStatus\" value=\"1\" name=\"roomStatus\" checked>
-                                        <label class=\"form-check-label\" for=\"roomStatus\">Open to clients</label>
-                                    </div>
-                                    <div class=\"form-check form-check-inline\">
-                                        <input class=\"form-check-input\" type=\"checkbox\" id=\"roomStatus\" value=\"0\" name=\"roomStatus\">
-                                        <label class=\"form-check-label\" for=\"roomStatus\">Closed to clients</label>
-                                    </div>";
-                            } else {
-                                echo "<div class=\"form-check form-check-inline\">
-                                <input class=\"form-check-input\" type=\"checkbox\" id=\"roomStatus\" value=\"1\" name=\"roomStatus\">
-                                <label class=\"form-check-label\" for=\"roomStatus\">Open to clients</label>
-                            </div>
-                            <div class=\"form-check form-check-inline\">
-                                <input class=\"form-check-input\" type=\"checkbox\" id=\"roomStatus\" value=\"0\" name=\"roomStatus\" checked>
-                                <label class=\"form-check-label\" for=\"roomStatus\">Closed to clients</label>
-                            </div>";
-                            }
-                        ?>                 
-                    </div>
-                </div> 
-
-                <div class="mb-3">
-                    <label for="roomState" class="form-label"> Room State </label>
-                    <select class="form-select" aria-label="Default select example" id="roomState" name="roomState">
-                    <?php 
-                            if($room_state == 'dirty'){ 
-                                echo "<option value=\"dirty\" selected> Dirty </option>
-                                <option value=\"clean\"> Clean </option>
-                                <option value=\"maintenance\"> Maintenance </option>";
-                            } else if($room_state == 'clean') {
-                                echo "<option value=\"dirty\" > Dirty </option>
-                                <option value=\"clean\" selected> Clean </option>
-                                <option value=\"maintenance\"> Maintenance </option>";
-                            } else if($room_state == 'maintenance'){
-                                echo "<option value=\"dirty\" > Dirty </option>
-                                <option value=\"clean\"> Clean </option>
-                                <option value=\"maintenance\" selected> Maintenance </option>";
-                            } else {
-                                echo "<option value=\"\" selected> Select an option </option>
-                                <option value=\"dirty\" > Dirty </option>
-                                <option value=\"clean\"> Clean </option>
-                                <option value=\"maintenance\"> Maintenance </option>";;
-                            }
-                        ?>
-                    </select>
-                </div>  
                 </div>
+
+                <div class="mb-3 d-none">
+                        <label for="dateIn" class="form-label">Date in</label>
+                        <input type="date" class="form-control" id="dateIn" name="dateIn" value="<?php echo $date_in; ?>"> 
+                    </div>
+                    <div class="mb-3 d-none">
+                        <label for="dateOut" class="form-label">Date out</label>
+                        <input type="date" class="form-control" id="dateOut" name="dateOut" value="<?php echo $date_out; ?>">
+                    </div> 
 
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
                     <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
                 </div>
-                
+            </form>
+        </div>        
     </div>
 
     <?php } ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php');?>
-            
-
-
-</html>

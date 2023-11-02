@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <?php   
@@ -8,7 +7,7 @@
 
         //SQL to chech if the customer exists 
         $sqlCustomers = "SELECT *
-        FROM 045_customers";
+        FROM 045_users";
         
         $connectar = mysqli_query($conn, $sqlCustomers);
         $customers = mysqli_fetch_all($connectar, MYSQLI_ASSOC);
@@ -22,4 +21,3 @@
 
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>

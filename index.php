@@ -1,9 +1,4 @@
-<?php
-    session_start();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <!-- Information about the hotel -->      <!-- It needs to end and put images -->
@@ -100,4 +95,3 @@
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
     
-</html>

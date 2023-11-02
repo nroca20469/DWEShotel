@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
 <!-- room_number, room_category(despolegable), room_status, room_State, room_price, description -->
@@ -65,4 +64,3 @@
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
     
-</html>

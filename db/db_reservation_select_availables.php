@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
     <?php
         //Create variable
@@ -18,7 +17,7 @@
             include('connect_db.php');
 
         //Fetch data
-        if($date_in != null && $date_out != null){
+        if($date_in != null && $date_out != null) {
              $sql = "SELECT room_number, room_category, room_price
             FROM 045_rooms
             WHERE room_number NOT IN (SELECT preselected_room
@@ -27,7 +26,7 @@
                                         AND date_out > '{$date_in}')
             AND room_status = 1
             GROUP BY room_category
-            ORDER BY room_number;";
+            ORDER BY RAND(room_category);";
             $result = mysqli_query($conn, $sql);
             $reservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -125,14 +124,10 @@
                     </div>
                     </div>
                     <br><h5>Price per night</h5> 
-                    <p> " . $reservations[0]['room_price'] . "</p>
-                        
-                    <br>
-                    ";
+                    <p> " . $reservations[0]['room_price'] . "</p>";
                     $room_num = $reservations[0]['room_number'];
                     $room_price = $reservations[0]['room_price'];
                         include $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'; 
-                        
                 echo " </a> 
                 </div>
             </div> ";
@@ -376,4 +371,3 @@
    
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>

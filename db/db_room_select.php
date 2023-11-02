@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <?php 
         //Create variable
@@ -24,12 +22,10 @@
             <button class=\"btn btn-secondary\" type = \"submit\">Update</button></form> 
             <form action = \"http://localhost/student045/dwes/db/db_room_delete.php\" method = \"POST\">
                 <input name=\"roomNumber\" value = \"" . $room['room_number'] . "\" hidden>
-            <button class=\"btn btn-secondary ms-40\" type = \"submit\">Delete</button></form></div>";
+            <button class=\"btn btn-secondary ms-4\" type = \"submit\">Delete</button></form></div>";
             echo '<br>';
         }
         echo '</div>';  
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-    
-    </html>

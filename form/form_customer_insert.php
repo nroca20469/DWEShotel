@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
     
     <div class="container-lg">
@@ -7,7 +6,7 @@
                 <h2>New Customer</h2>
                 <p class="lead">Insert all the data that we ask for, thank you</p>
             </div>
-        <div class="row justify-content-center my-5">
+            <div class="row justify-content-center my-5">
             <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_insert.php" method="POST">
                 <div class="mb-3">
                     <label for="surname" class="form-label">Surname</label>
@@ -56,4 +55,3 @@
 </div>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>

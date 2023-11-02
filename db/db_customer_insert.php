@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
     
     <?php 
@@ -20,7 +19,7 @@
 
         //SQL Check the customer not exists
             $sqlCheckCustomer = "SELECT customer_id 
-            FROM 045_customers
+            FROM 045_users
             WHERE customer_dni = '$customer_dni'";
             
             $exists = mysqli_query($conn, $sqlCheckCustomer);
@@ -34,7 +33,7 @@
         
         //SQL Insert
             if($insert == 1){
-                $sqlInserCustomer = "INSERT INTO `045_customers`
+                $sqlInserCustomer = "INSERT INTO `045_users`
                 (`customer_forename`, `customer_lastname`, `customer_dni`, `customer_email`, `customer_phone_number`, `customer_description`, `customer_status`, `online_user`) 
                 VALUES 
                 ('$surname','$lastanme','$customer_dni','$email','$phone_number','{\n\"vip\": $vip,\n\"problematic\": $problematic \n}',1, \"$online_user\");";
@@ -52,4 +51,3 @@
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
-</html>
