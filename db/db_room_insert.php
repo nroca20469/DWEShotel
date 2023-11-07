@@ -22,64 +22,21 @@
         $room_status;
         $bed_type;
         $room_ammenities;
-
-        $link_room_insert = $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/db_reservations_insert.php';
+        
+        
         if(isset($_POST['submit'])){
-            if(!empty($_POST['roomNum'])) {
-                $room_number = $_POST['roomNum'];
-                echo 'You have chosen: ' . $room_number;
+            $room_number = $_POST['roomNum'] ?? null;
+            $room_price = $_POST['roomPrice'] ?? null;
+            $room_type = $_POST['roomType'] ?? null;
+            $room_status = $_POST['roomStatus'] ?? null;
+            $room_state = $_POST['roomState'] ?? null;
+            $bed_type = $_POST['bedType'] ?? null;
+
+            if(!$room_number || !$room_price || !$room_type || !$room_status)  {
+                $boton_aviso = 'There was a problem with your data';
             } else {
-                echo 'Please select a value for the Room Number . <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='$link_room_insert'\">Go Back</button>");
-                return;
-            }
-            echo '<br>';
-            if(!empty($_POST['roomPrice'])) {
-                $room_price = $_POST['roomPrice'];
-                echo 'You have chosen for room price: ' . $room_price;
-            } else {
-                echo 'Please select a value for the Room Price . <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
-            echo '<br>';
-            if(!empty($_POST['roomType'])) {
-                $room_type = $_POST['roomType'];
-                echo 'You have chosen for room  type: ' . $room_type;
-            } else {
-                echo 'Please select a value for the Room Type. <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
-            echo '<br>';
-            if(!empty($_POST['roomStatus'])) {
-                $room_status = $_POST['roomStatus'];
-                echo 'You have chosen for room status: ' . $room_status;
-            } else {
-                echo 'Please select a value for the Room Status .';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
-        
-            echo '<br>';
-            if(!empty($_POST['roomState'])) {
-                $room_state = $_POST['roomState'];
-                echo 'You have chosen for room state: ' . $room_state;
-            } else {
-                echo 'Please select a value for the Room State. <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
-        
-            echo '<br>';
-            if(!empty($_POST['bedType'])) {
-                $bed_type = $_POST['bedType'];
-                echo 'You have chosen for bed type: ' . $bed_type;
-            } else {
-                echo 'Please select a value for the Bed Type. <br>';
-                echo("<br><button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_room_insert.php'\">Go Back</button>");
-                return;
-            }
+
+            
         
 
             //Connect to db
@@ -93,6 +50,7 @@
             $room_number_exists = mysqli_fetch_all($result_room_num, MYSQLI_NUM);
             if($room_number_exists != null) {
                 echo "<br>The room already exists";
+
             } else {
                 switch($room_type){
                     case 'single':
@@ -140,13 +98,27 @@
             //Show that it has been created
             if ($conn->query($sql_insert_room) === TRUE) {
                 echo "Your room is now created";
+                echo '<script>location.href="/student045/dwes/index.php"</scipt>';
               } else {
                 echo "Your room is not created, see if there is any problem with your data";
+                $boton_aviso = '<button href="/student045/dwes/form/form_room_insert.php" class="btn btn-secondary">Return</button>';
               }
             }
-
+        }
         
         }
+        echo "  <div class=\"text-center\">
+                    <h5>Room Number: $room_number </h5>
+                </div>";
+        
+
+        echo "  <div class=\"text-center\">
+                    <p> $boton_aviso  </p>
+                    <div class=\"btn-group\">
+                        <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Return home </button></a>
+                        <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Return to insert another room </button></a>
+                    </div>
+                </div>"; 
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

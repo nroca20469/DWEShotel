@@ -43,28 +43,28 @@ if($connect->num_rows == 0){
         $date_out = $reservation['date_out'];
         $extras = $reservation['extras'];
     }
-    $reservation_extras = json_decode($extras);
-    if(!empty($reservation_extras)){
-        $internal_services = $reservation_extras -> {'Internal Services'};  // --> mirar si funciona
-        if(!empty($internal_services)){
-            foreach ($internal_services as $internal) {
-            $nameInternal = $internal -> Name;
-            $priceInternal = $internal -> Price;
-            }
-        }
+    // $reservation_extras = json_decode($extras);
+    // if(!empty($reservation_extras)){
+    //     $internal_services = $reservation_extras -> {'Internal Services'};  // --> mirar si funciona
+    //     if(!empty($internal_services)){
+    //         foreach ($internal_services as $internal) {
+    //         $nameInternal = $internal -> Name;
+    //         $priceInternal = $internal -> Price;
+    //         }
+    //     }
 
-        $external_services = $reservation_extras -> ExternalServices;
-        if(!empty($external_services)){
-            foreach ($external_services as $external) {
-            $nameExternal = $external -> Name;
-            $priceExternal = $external -> Price;
-            }
-        }
-    }
+    //     $external_services = $reservation_extras -> ExternalServices;
+    //     if(!empty($external_services)){
+    //         foreach ($external_services as $external) {
+    //         $nameExternal = $external -> Name;
+    //         $priceExternal = $external -> Price;
+    //         }
+    //     }
+    // }
 
-    if(isset($nameInternal)){
-        echo $nameInternal;
-    }
+    // if(isset($nameInternal)){
+    //     echo $nameInternal;
+    // }
 
 //$bedType = "bed type";
 //$bed_type = $room_desciption_array -> bedType; 
@@ -75,10 +75,10 @@ if($connect->num_rows == 0){
     
     <div class="container-lg">
         <div class="text-center">
-            <h2>Update Room</h2>
+            <h2>Update Reservation</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_room_update.php" method="POST">
+            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_reservations_update.php" method="POST">
                 <div class="mb-3">
                     <label for="reservationNum" class="form-label" >Reservation Number</label>
                     <input type="numeric" class="form-control" name="reservationNum" value="<?php echo $reservation_number; ?>" readonly>
@@ -145,14 +145,147 @@ if($connect->num_rows == 0){
                     </select>
                 </div>
 
-                <div class="mb-3 d-none">
-                        <label for="dateIn" class="form-label">Date in</label>
-                        <input type="date" class="form-control" id="dateIn" name="dateIn" value="<?php echo $date_in; ?>"> 
+                <div class="mb-3">
+                    <label for="dateIn" class="form-label">Date in</label>
+                    <input type="date" class="form-control" id="dateIn" name="dateIn" value="<?php echo $date_in; ?>" readonly> 
+                </div>
+                <div class="mb-3">
+                    <label for="dateOut" class="form-label">Date out</label>
+                    <input type="date" class="form-control" id="dateOut" name="dateOut" value="<?php echo $date_out; ?>" readonly>
+                </div> 
+
+                <?php
+
+                    $json = json_decode($extras,true);
+                    //var_dump($json);
+                   // echo "<br>"; 
+                    $laundry = false; $gym = false; $spa = false; $horseTrail = false; $boat = false;
+                if($json != null) {
+                   
+                    foreach ($json['Internal services'] as $key => $value){
+                        //echo "$key: " . $value['Name'] . " \n";
+                        $internalName = $value['Name'];
+                       
+                      //  echo "$key: " . $value['Price'] . " \n";
+                        $internalPrice = $value['Price'];
+
+                        if($internalName == "Laundry"){
+                            $laundry = true;
+                            $laundryPrice = $internalPrice;
+                        } else if($internalName == "Gym") {
+                            $gym = true;
+                            $gymPrice = $internalPrice;
+                        } else if($internalName == "Spa"){
+                            $spa = true;
+                            $spaPrice = $internalPrice;
+                        }
+                    };
+                    
+
+                    foreach ($json['External services'] as $key => $value){
+                      //  echo "$key: " . $value['Name'] . " \n";
+                        $externalName = $value['Name'];
+
+                    //    echo "$key: " . $value['Price'] . " \n";
+                        $externalPrice = $value['Price'];
+
+                        if($externalName == "Horse trail"){
+                            $horseTrail = true;
+                            $horsePrice = $externalPrice;
+                        } else if ($externalName == "Boat trail"){
+                            $boat = true;
+                            $boatPrice = $externalPrice;
+                        }
+                    };
+                }
+                ?>
+                    <div class="mx-2 pt-1 text-center">
+                        <label for="internal" class="form-label"><h5>External Services</h5></label>
                     </div>
-                    <div class="mb-3 d-none">
-                        <label for="dateOut" class="form-label">Date out</label>
-                        <input type="date" class="form-control" id="dateOut" name="dateOut" value="<?php echo $date_out; ?>">
-                    </div> 
+
+                <?php 
+                    
+                    echo "<div class=\"mb-3\">
+                    <label for=\"horse\" class=\"form-label\">Horse trail</label>
+                    <select class=\"form-select\" aria-label=\"Horse\"  name=\"horse\" type=\"select\">";
+                    if($horseTrail){
+                        echo "<option value=\"true\" selected> Si </option>
+                                <option value=\"false\"> No </option>
+                            </select>
+                        </div>";
+                    } else {
+                        echo "<option value=\"true\"> Si </option>
+                                <option value=\"false\" selected> No </option>
+                            </select>
+                        </div>"; 
+                    } 
+                    echo "<div class=\"mb-3\">
+                    <label for=\"boat\" class=\"form-label\">Boat trail</label>
+                    <select class=\"form-select\" aria-label=\"Boat\"  name=\"boat\" type=\"select\">";
+                    if($boat){
+                        echo "<option value=\"true\" selected> Si </option>
+                                <option value=\"false\"> No </option>
+                            </select>
+                        </div>";
+                    } else {
+                        echo "<option value=\"true\"> Si </option>
+                                <option value=\"false\" selected> No </option>
+                            </select>
+                        </div>"; 
+                    } 
+                ?>
+
+                <div class="mx-2 pt-1 text-center">
+                    <label for="external" class="form-label"><h5>Internal Services</h5></label>
+                </div>
+
+                <?php 
+                    echo "<div class=\"mb-3\">
+                    <label for=\"laundry\" class=\"form-label\">Laundry</label>
+                    <select class=\"form-select\" aria-label=\"Laundry\"  name=\"laundry\" type=\"select\">";
+                    if($laundry){
+                        echo "<option value=\"true\" selected> Si </option>
+                                <option value=\"false\"> No </option>
+                            </select>
+                        </div>";
+                    } else {
+                        echo "<option value=\"true\"> Si </option>
+                                <option value=\"false\" selected> No </option>
+                            </select>
+                        </div>"; 
+                    } 
+
+                    echo "<div class=\"mb-3\">
+                    <label for=\"gym\" class=\"form-label\">Gym</label>
+                    <select class=\"form-select\" aria-label=\"Gym\"  name=\"gym\" type=\"select\">";
+                    if($gym){
+                        echo "<option value=\"true\" selected> Si </option>
+                                <option value=\"false\"> No </option>
+                            </select>
+                        </div>";
+                    } else {
+                        echo "<option value=\"true\"> Si </option>
+                                <option value=\"false\" selected> No </option>
+                            </select>
+                        </div>"; 
+                    } 
+
+                    echo "<div class=\"mb-3\">
+                    <label for=\"spa\" class=\"form-label\">Spa</label>
+                    <select class=\"form-select\" aria-label=\"Spa\"  name=\"spa\" type=\"select\">";
+                    if($gym){
+                        echo "<option value=\"true\" selected> Si </option>
+                                <option value=\"false\"> No </option>
+                            </select>
+                        </div>";
+                    } else {
+                        echo "<option value=\"true\"> Si </option>
+                                <option value=\"false\" selected> No </option>
+                            </select>
+                        </div>"; 
+                    } 
+
+                ?>
 
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
                     <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>

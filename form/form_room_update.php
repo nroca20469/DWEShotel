@@ -140,15 +140,145 @@ $tv = $room_desciption_array -> TV;
                         ?>
                     </select>
                 </div>  
+
+                <div class="pt-1 text-center">
+                    <label for="internal" class="form-label"><h5>Ammenities per room</h5></label>
                 </div>
 
                 <?php
-                    $json = json_decode($room_description, true);
-                    var_dump($json);    
+                    $json = json_decode($room_description,true);
+                    var_dump($json);
+                    print_r ($json);
+                    // echo "<br>"; 
+                    //$laundry = false; $gym = false; $spa = false; $horseTrail = false; $boat = false;
+                    $air_conditioning = false;
+                    if($json != null) {
+        
+                        //Passar a variables
+                        if( $json['TV'] == 1 ){
+                            $tv = 'true';
+                        } else {
+                            $tv = 'false';
+                        }
+
+                        if( $json['Air Conditioning'] == 1 ){
+                            $air_conditioning = 'true';
+                        } else {
+                            $air_conditioning = 'false';
+                        }
+
+                        if( $json['Wifi'] == 1 ){
+                            $wifi = 'true';
+                        } else {
+                            $wifi = 'false';
+                        }
+
+                        if( $json['extra bed'] == 1 ){
+                            $extra_bed = 'true';
+                        } else {
+                            $extra_bed = 'false';
+                        }
+
+                        if( $json['bed type'] == "single" ){
+                            $bed_type = 'single';
+                        } else if($json['bed type'] == "double"){
+                            $bed_type = 'double';
+                        }
+
+                        $price_per_nigth = $json['bed price per night'];      
                 ?>
-                <div class="d-grid gap-2 col-4 mx-auto m-2">
-                    <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
-                </div>
+
+                <div class="mb-3">
+                    <label for="tv" class="form-label"> TV </label>
+                    <select class="form-select" aria-label="Default select example" id="tv" name="tv">
+                        <?php 
+                            if($tv == 'true'){ 
+                                echo "<option value=\"true\" selected> True </option>
+                                <option value=\"false\"> False </option>";
+                            } else {
+                                echo "<option value=\"false\" selected> False </option>
+                                <option value=\"true\"> True </option>";
+                            }
+                        ?>
+                    </select>
+                </div>  
+
+                <div class="mb-3">
+                    <label for="airConditioning" class="form-label"> Air Conditioning </label>
+                    <select class="form-select" aria-label="Default select example" id="airConditioning" name="airConditioning">
+                        <?php 
+                            if($air_conditioning == 'true'){ 
+                                echo "<option value=\"true\" selected> True </option>
+                                <option value=\"false\"> False </option>";
+                            } else {
+                                echo "<option value=\"false\" selected> False </option>
+                                <option value=\"true\"> True </option>";
+                            }
+                        ?>
+                    </select>
+                </div>  
+                
+                <div class="mb-3">
+                    <label for="wifi" class="form-label">  Wifi </label>
+                    <select class="form-select" aria-label="Default select example" id="wifi" name="wifi">
+                        <?php 
+                            if($wifi == 'true'){ 
+                                echo "<option value=\"true\" selected> True </option>
+                                <option value=\"false\"> False </option>";
+                            } else {
+                                echo "<option value=\"false\" selected> False </option>
+                                <option value=\"true\"> True </option>";
+                            }
+                        ?>
+                    </select>
+                </div>  
+
+                <div class="mb-3">
+                    <label for="extraBed" class="form-label"> Extra Bed </label>
+                    <select class="form-select" aria-label="Default select example" id="extraBed" name="extraBed">
+                        <?php 
+                            if($extra_bed == 'true'){ 
+                                echo "<option value=\"true\" selected> True </option>
+                                <option value=\"false\"> False </option>";
+                            } else {
+                                echo "<option value=\"false\" selected> False </option>
+                                <option value=\"true\"> True </option>";
+                            }
+                        ?>
+                    </select>
+                </div>  
+
+                <div class="mb-3">
+                    <label for="bedType" class="form-label"> Bed Type </label>
+                    <select class="form-select" aria-label="Default select example" id="bedType" name="bedType">
+                        <?php 
+                            if($bed_type == 'single'){ 
+                                echo "<option value=\"single\" selected> Single </option>
+                                <option value=\"double\"> Double </option>";
+                            } else {
+                                echo "<option value=\"single\" selected> Double </option>
+                                <option value=\"true\"> Single </option>";
+                            }
+                        ?>
+                    </select>
+                </div>  
+
+                <div class="mb-3">
+                    <label for="priceNight" class="form-label"> Price per night </label>
+                    <input class="form-control" name="priceNight" type="number" value ="<?php echo $price_per_nigth; ?>" readonly>
+                </div>  
+
+            </div>
+                
+            <?php } ?>
+            <div class="d-grid gap-2 col-4 mx-auto m-2">
+                <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
+            </div>
+
+        </div>
+                
+               
+               
                 
     </div>
 

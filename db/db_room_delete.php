@@ -2,8 +2,11 @@
 
 <?php 
     //Crear variables
-    $room_number = $_POST['roomNumber'];
-    echo $room_number;
+    if(isset( $_POST['roomNumber'])){
+        $room_number = $_POST['roomNumber'];
+        echo $room_number;
+    
+    
 
     //Coonectar bd
     include('connect_db.php');
@@ -30,7 +33,9 @@
         echo 'Can not be deleted';
     }
   
-
+    } else {
+        echo 'Room number not set';
+    }
 ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

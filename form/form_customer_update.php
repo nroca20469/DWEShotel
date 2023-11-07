@@ -19,7 +19,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
 
 //Query to select the customer
 $query_customer = "SELECT *
-FROM 045_customers
+FROM 045_users
 WHERE customer_id = $customer_id";
 
 $connect = mysqli_query($conn, $query_customer);

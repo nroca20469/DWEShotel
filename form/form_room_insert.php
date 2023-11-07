@@ -51,8 +51,8 @@
                     <label for="bedType" class="form-label">Bed Type</label>
                     <select class="form-select" aria-label="Default select example" id="bedType" name="bedType">
                         <option selected value="">Select</option>
-                        <option value="1">Single</option>
-                        <option value="2">Double</option>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
                     </select>
                 </div>
 

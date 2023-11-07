@@ -25,7 +25,7 @@
         <div class="row  justify-content-center">
             <div class="col-lg-6 mb-3 text-center">
                 <p>Are you still not registered?</p>
-                <a href="http://localhost/student045/dwes/form/form_register.php"><button class="btn btn-secondary">Register</button></a>
+                <a href="/student045/dwes/form/form_register.php"><button class="btn btn-secondary">Register</button></a>
             </div>
             
         </div>
