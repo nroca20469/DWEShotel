@@ -22,6 +22,7 @@
         $room_status;
         $bed_type;
         $room_ammenities;
+        $boton_aviso;
         
         
         if(isset($_POST['submit'])){
@@ -32,7 +33,8 @@
             $room_state = $_POST['roomState'] ?? null;
             $bed_type = $_POST['bedType'] ?? null;
 
-            if(!$room_number || !$room_price || !$room_type || !$room_status)  {
+
+            if(!$room_number || !$room_price || !$room_type || !$room_status || !$room_state || !$bed_type)  {
                 $boton_aviso = 'There was a problem with your data';
             } else {
 
@@ -49,7 +51,7 @@
             $result_room_num = mysqli_query($conn, $sql_room);
             $room_number_exists = mysqli_fetch_all($result_room_num, MYSQLI_NUM);
             if($room_number_exists != null) {
-                echo "<br>The room already exists";
+                $boton_aviso = "<br>The room already exists";
 
             } else {
                 switch($room_type){
@@ -97,11 +99,9 @@
             
             //Show that it has been created
             if ($conn->query($sql_insert_room) === TRUE) {
-                echo "Your room is now created";
-                echo '<script>location.href="/student045/dwes/index.php"</scipt>';
+                $boton_aviso = "Your room is now created";
               } else {
-                echo "Your room is not created, see if there is any problem with your data";
-                $boton_aviso = '<button href="/student045/dwes/form/form_room_insert.php" class="btn btn-secondary">Return</button>';
+                $boton_aviso = "Your room is not created, see if there is any problem with your data";
               }
             }
         }
@@ -116,7 +116,7 @@
                     <p> $boton_aviso  </p>
                     <div class=\"btn-group\">
                         <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Return home </button></a>
-                        <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Return to insert another room </button></a>
+                        <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Insert another room </button></a>
                     </div>
                 </div>"; 
     ?>

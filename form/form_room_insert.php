@@ -29,11 +29,11 @@
                     <label for="roomStatus" class="form-label">Room Status</label>
                     <div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="roomStatus" value="1" name="roomStatus">
+                            <input class="form-check-input" type="checkbox" id="roomStatus" value="true" name="roomStatus">
                             <label class="form-check-label" for="roomStatus">Open to clients</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="roomStatus" value="0" name="roomStatus">
+                            <input class="form-check-input" type="checkbox" id="roomStatus" value="false" name="roomStatus">
                             <label class="form-check-label" for="roomStatus">Closed to clients</label>
                         </div>
                     </div>

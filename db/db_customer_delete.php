@@ -35,10 +35,11 @@
            
           //  echo $deleted;  
             if($deleted == 1){
-                $sqlDeleteCustomer = "DELETE FROM `045_customers` 
+                $sqlDeleteCustomer = "DELETE FROM `045_users` 
                 WHERE customer_id = $customer_id;";
 
                 $isDeleted = mysqli_query($conn, $sqlDeleteCustomer);
+
                 $message = 'The customer has been deleted';
             }
 

@@ -48,7 +48,7 @@
                         Rooms
                     </a>
                     <ul class="dropdown-menu">
-                        <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_select.php')?></li>
+                        <li><a class="dropdown-item" href="/student045/dwes/db/db_room_select_all.php">Select</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_room_insert.php">Insert</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_room_update_call.php">Update</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_room_delete_call.php">Delete</a></li>
@@ -59,7 +59,7 @@
                         Customers
                     </a>
                     <ul class="dropdown-menu">
-                        <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_customer_select.php')?></li>
+                        <li><a class="dropdown-item" href="/student045/dwes/db/db_customer_select_all.php">Select</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_customer_insert.php">Insert</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_customer_update_call.php">Update</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_customer_delete_call.php">Delete</a></li>
@@ -70,7 +70,7 @@
                         Reservations
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select.php">Select</a></li>
+                        <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_all.php">Select</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li>
                         <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_delete_call.php">Delete</a></li>
@@ -115,7 +115,7 @@
                             Rooms
                         </a>
                         <ul class="dropdown-menu">
-                            <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_select.php')?></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_room_select_all.php">Select</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -165,7 +165,7 @@
                             Rooms
                         </a>
                         <ul class="dropdown-menu">
-                            <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_select.php')?></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_room_select_all.php">Select</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_room_insert.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_room_update_call.php">Update</a></li>
                         </ul>
@@ -175,7 +175,7 @@
                             Customers
                         </a>
                         <ul class="dropdown-menu">
-                            <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_customer_select.php')?></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_customer_select_all.php">Select</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_customer_insert.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_customer_update_call.php">Update</a></li>
                         </ul>
@@ -185,7 +185,7 @@
                             Reservations
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select.php">Select</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_all.php">Select</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li>
                         </ul>
@@ -228,7 +228,7 @@
                             Rooms
                         </a>
                         <ul class="dropdown-menu">
-                            <li><?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_room_select.php')?></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_room_select_all.php">Select</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -236,8 +236,7 @@
                             Reservations
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select.php">Select</a></li>
-                            <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_insert.php">Insert</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
                         </ul>
                     </li>
                     <li class="nav-item d-none d-lg-inline">
