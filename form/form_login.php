@@ -9,7 +9,7 @@
         <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_login.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com" pattern="{@}" title="Please put an @">
+                <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com/username">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>

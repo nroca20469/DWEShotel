@@ -5,12 +5,13 @@
     //Capture variables
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
-        $surname = $_POST['surname'];
+        $surname = $_POST['surname'] ?? null;
         $email = $_POST['email'];
         $password = $_POST['password'];
         $password_repeat = $_POST['repeatPassword'];
         $dni = $_POST['dni'];
         $phone_number = $_POST['phoneNumber'];
+        $username = $_POST['username'] ?? "$email";
 
         $password_ident = strcmp($password, $password_repeat);
         //echo $password_ident;
@@ -30,9 +31,9 @@
 
                 //Insert customer
                 $sqlInserCustomer = "INSERT INTO `045_users`
-                (`customer_forename`, `customer_lastname`, `customer_dni`, `customer_email`, `customer_phone_number`, `customer_status`, `online_user`, `online_password`, `customer_role`) 
+                (`customer_forename`, `customer_lastname`, `customer_dni`, `customer_email`, `customer_phone_number`, `customer_status`, `online_user`, `online_password`, `customer_role`, `customer_description`) 
                 VALUES 
-                ('$name', '$surname', '$dni', '$email', '$phone_number', 1, '$email', '$password', 'customer');";
+                ('$name', '$surname', '$dni', '$email', '$phone_number', 1, '$username', '$password', 'customer', '{\n\"vip\": false,\n\"problematic\": false \n}');";
             
                 $boton_aviso = ($conn->query($sqlInserCustomer) === true) ? "Customer Inserted" : "Error inserting customer, please try later";
 
@@ -56,7 +57,6 @@
             <p> $boton_aviso  </p>
             <div class=\"btn-group\">
                 <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Return home </button></a>
-                <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Insert another room </button></a>
             </div>
         </div>"; 
     } else {

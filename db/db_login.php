@@ -22,11 +22,8 @@
         
         foreach($customers as $customer){
             $customer_id = $customer['customer_id'];
-          //  echo $customer_id;
             $name = $customer['customer_forename'];
-           // echo $name;
             $role = $customer['customer_role'];
-        //    echo $role;
         }
 
 
@@ -55,25 +52,16 @@
                 echo $_SESSION['name'];
                 echo $_SESSION['customer_id'];
                 echo $_SESSION['role'];
+                echo "<script>location.href = 'http://localhost/student045/dwes/index.php?msg=$msg';</script>";
+
             } else {
                 echo 'Su contraseña es incorrecta';
             }
+                
 
-
-
-
-            
-                //echo 'hi';
-                //header('Location: http://localhost/student045/dwes/');
-                //header("Content-Type: text/html; charset=UTF-8");
-                // exit(header("Location: http://localhost/student045/dwes/"));
-                // header("Location: http://localhost/student045/dwes/");
-                // echo 'hi';
-                echo "<script>location.href = 'http://localhost/student045/dwes/index.php?msg=$msg';</script>";
-
-
-            
-        } 
+        } else {
+            echo 'register';
+        }
         
     ?>
 

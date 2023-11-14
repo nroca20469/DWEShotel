@@ -22,6 +22,9 @@
     <?php 
     $role = $_SESSION['role'] ?? 'anonymous' ;
     echo $role;
+    $name = $_SESSION['name'] ?? null;
+  //  echo $name;
+
     if($role === 'admin') { ?>
     <!-- Left part of the navbar -->
     <nav class="navbar navbar-expand-md navbar-light">
@@ -124,8 +127,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select.php">Select</a></li>
-                            <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_insert.php">Insert</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select.php">Cancel</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/student045/dwes/form/db_customer_select.php">See profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/student045/dwes/form/form_reservation_select.php">Reserve now</a>

@@ -35,6 +35,7 @@ if($connect->num_rows == 0){
     
     foreach ($result as $customer) {
     $customer_forename = $customer['customer_forename'];
+    $customer_role = $customer['customer_role'];
     $customer_lastname = $customer['customer_lastname'];
     $customer_email = $customer['customer_email'];
     $customer_phone_number = $customer['customer_phone_number'];
@@ -45,7 +46,7 @@ if($connect->num_rows == 0){
 $customer_desciption_array = json_decode($customer_description);
 $vip = $customer_desciption_array -> vip;
 $problematic = $customer_desciption_array -> problematic;
-echo $customer_forename . ' ' . $customer_lastname . ' ' . $customer_email . ' ' . $customer_phone_number . ' ' .  $customer_dni . ' ' . $customer_description . ' ' . $vip . ' ' . $problematic;
+//echo $customer_forename . ' ' . $customer_lastname . ' ' . $customer_email . ' ' . $customer_phone_number . ' ' .  $customer_dni . ' ' . $customer_description . ' ' . $vip . ' ' . $problematic;
 
 ?>
     
@@ -75,6 +76,27 @@ echo $customer_forename . ' ' . $customer_lastname . ' ' . $customer_email . ' '
                     <label for="customerEmail" class="form-label">Email</label>
                     <input type="text" class="form-control" id="customerEmail" name="customerEmail" value = <?php echo $customer_email ?>>
                 </div> 
+                <?php if($role == 'admin') { ?>
+                <div class="mb-3">
+                    <label for="customerRole" class="form-label">Customer Role</label>
+                    <select class="form-select" aria-label="Default select example" name="customerRole">  
+                    <?php if($customer_role == 'admin'){
+                            echo "<option selected value=\"admin\">Admin</option>
+                            <option value=\"worker\">Worker</option>
+                            <option value=\"customer\">Customer</option>";
+                        } else if($customer_role == 'worker'){
+                            echo "<option value=\"customer\">Customer</option>
+                            <option value=\"admin\">Admin</option>
+                            <option value=\"worker\" selected>Worker</option>";
+                        } else {
+                            echo "<option value=\"customer\" selected>Customer</option>
+                            <option value=\"admin\">Admin</option>
+                            <option value=\"worker\">Worker</option>";
+                        }
+                    ?>
+                    </select>   
+                </div>
+                <?php  } ?>
                 <div class="mb-3">
                     <label for="customerNumberPhone" class="form-label">Phone Number</label>
                     <input type="text" class="form-control" name="customerNumberPhone" value = <?php echo $customer_phone_number ?>>
@@ -107,7 +129,7 @@ echo $customer_forename . ' ' . $customer_lastname . ' ' . $customer_email . ' '
                             <option value=\"false\">No</option>
                             <option value=\"true\">Yes</option>";
                         }
-                        ?>
+                    ?>
                     </select>
                 </div>
                 <div class="mb-3">

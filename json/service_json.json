@@ -1,0 +1,83 @@
+{
+    "bar": [{
+        "name": "",
+        "price/ud": "",
+        "uds": ""
+    }],
+    "services" : {
+        "name": "",
+        "price": "",
+        "uds": ""
+    },
+
+
+
+    "descriptivo" : {     
+        "Internal services" : {
+            "spa": {
+                "name": "spa",
+                "price": "50.0",
+                "uds": "1"
+            },
+            "gym": {
+                "name": "gym",
+                "price": "20.00",
+                "uds": "1"
+            },
+            "laundry": {
+                "name": "laundry",
+                "price": "10.00",
+                "uds": "1"
+            },
+            "bar":[
+                {
+                    "name": "",
+                    "price/ud": "",
+                    "uds": ""
+                }
+            ],
+            "buffet libre": {
+                "name": "buffet libre",
+                "price": "20.0",
+                 "uds": "1"
+            },
+            "dinner time": {
+                "name": "dinner time",
+                "price": "30.0",
+                "uds": "1"
+            },
+            "breakfast time": {
+                "name": "breakfast time",
+                "price": "30.0",
+                "uds": "1"
+            },
+            "kindergarden": {
+                "name": "kindergarden",
+                "price": "10.0",
+                "uds": "1"
+            },
+            "petgarden": {
+                "name": "petgarden",
+                "price": "5.0",
+                "uds": "1"
+            }
+        }, 
+        "External services": {
+            "rent_a_vehicle": {
+                "name": "rent_a_vehicle",
+                "price": "",
+                "uds": ""
+            },
+            "Horse trail": {
+                "name": "Horse trail",
+                "price": "55.0",
+                "uds": "1"
+            },
+            "Boat trail": {
+                "name": "Boat trail",
+                "price": "55.0",
+                "uds": "1"
+            }
+        } 
+    }
+}

@@ -105,7 +105,20 @@
                 $boton_aviso = 'Room number not available';
             }
             
+            if($reservation_status == 'check_out') {
+                $boton_aviso = "check out";
 
+                $sql_insert_invoice = "INSERT INTO `045_invoice`
+                (`invoice_number`, `reservation_number`) VALUES 
+                (DEFAULT,$reservation_num)";
+               /* $insert_invoice = mysqli_query($conn, $sql_insert_invoice);
+*/
+                if ($conn->query($sql_insert_invoice) === TRUE) {
+                    $boton_aviso = "Your invoice is now created";
+                  } else {
+                    $boton_aviso = "Your invoice is not created, see if there is any problem with your data";
+                  }
+            }
 
         } else {
             echo 'The server looks like its not working correctly, check the connection pleasse';

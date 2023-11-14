@@ -1,4 +1,3 @@
-b
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
     <?PHP 
@@ -35,6 +34,11 @@ b
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" class="form-control" name="email" placeholder="example@email.com" >
+            </div> 
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="If empty, default is the email" >
             </div> 
 
             <div class="mb-3">
