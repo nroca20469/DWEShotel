@@ -22,11 +22,11 @@
            
             if($role != 'anonymous' && $role != 'customer'){
                 echo "<span class=\"fw-thin secondary-color btn-group m-2\">
-                        <form action=\"http://localhost/student045/dwes/form/form_reservations_update.php\" method =\"POST\">
+                        <form action=\"/student045/dwes/form/form_reservations_update.php\" method =\"POST\">
                             <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
                             <button class=\"btn btn-secondary m-2 \"> Update </button>
                         </form>
-                        <form action=\"http://localhost/student045/dwes/db/db_reservations_delete.php\" method =\"POST\">
+                        <form action=\"/student045/dwes/db/db_reservations_delete.php\" method =\"POST\">
                             <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
                             <button class=\"btn btn-secondary my-2\"> Delete </button>
                         </form>

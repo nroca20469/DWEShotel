@@ -5,7 +5,7 @@
     session_destroy();
 
     if(empty(session_id())){
-        echo "<script>location.href = 'http://localhost/student045/dwes/index.php';</script>";
+        echo "<script>location.href = '/student045/dwes/index.php';</script>";
     } else {
         echo 'There was a problem, try again later';
     }

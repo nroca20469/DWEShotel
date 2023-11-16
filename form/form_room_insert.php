@@ -7,7 +7,7 @@
                   <h2>Insert a room</h2>
             </div>
             <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_room_insert.php" method="POST">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_room_insert.php" method="POST">
                 <div class="mb-3">
                     <label for="roomNum" class="form-label">Room Number</label>
                     <input type="numeric" class="form-control" id="roomNum" name="roomNum" placeholder="xyy (where x is the floor and yy from 1-10)">

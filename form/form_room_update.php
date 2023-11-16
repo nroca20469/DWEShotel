@@ -38,10 +38,6 @@ if($connect->num_rows == 0){
 }
 $room_desciption_array = json_decode($room_description);
 $tv = $room_desciption_array -> TV;
-//$bedType = "bed type";
-//$bed_type = $room_desciption_array -> bedType; 
-
-//$airConditioning = $room_desciption_array -> Air; //NO FUNCIONA MIRAR PQ
 
 ?>
     
@@ -50,8 +46,7 @@ $tv = $room_desciption_array -> TV;
             <h2>Update Room</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_room_update.php" method="POST">
-
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_room_update.php" method="POST">
                 <div class="mb-3">
                     <label for="roomNum" class="form-label">Room Number</label>
                     <input type="numeric" class="form-control" id="roomNum" name="roomNum" value="<?php echo $room_number; ?>">
@@ -149,8 +144,6 @@ $tv = $room_desciption_array -> TV;
                     $json = json_decode($room_description,true);
                     var_dump($json);
                     print_r ($json);
-                    // echo "<br>"; 
-                    //$laundry = false; $gym = false; $spa = false; $horseTrail = false; $boat = false;
                     $air_conditioning = false;
                     if($json != null) {
         

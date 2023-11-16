@@ -26,9 +26,9 @@
             ";
             if ($conn->query($sql_insert_reservation) === TRUE) {
                 $boton_aviso = "Your room is now booked";
-              } else {
+            } else {
                 $boton_aviso =  "Your room is not booked, see if there is any problem with your data";
-              }
+            }
         }
         echo "  <div class=\"text-center\">
                     <h5> Insert reservation </h5>

@@ -54,25 +54,25 @@
                         </div>
                         <div class=\"carousel-inner\">
                             <div class=\"carousel-item active\">
-                                <img src=\"http://localhost/student045/dwes/img/single1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
+                                <img src=\"/student045/dwes/img/single5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/single7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/single7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                         </div>
                         <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#single\" data-bs-slide=\"prev\">
@@ -118,7 +118,7 @@
                                 </ul>   
                             </div>
                             <div class=\"modal-footer\">
-                                <a class=\"btn btn-primary\" role=\"button\" href=\"http://localhost/student045/dwes/db/db_reservations_insert.php\">Book</a>
+                                <a class=\"btn btn-primary\" role=\"button\" href=\"/student045/dwes/db/db_reservations_insert.php\">Book</a>
                                 <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
                             </div>
                             </div>
@@ -148,25 +148,25 @@
                         </div>
                         <div class=\"carousel-inner\">
                             <div class=\"carousel-item active\">
-                                <img src=\"http://localhost/student045/dwes/img/double1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
+                                <img src=\"/student045/dwes/img/double5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/double7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/double7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                         </div>
                         <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#double\" data-bs-slide=\"prev\">
@@ -191,37 +191,38 @@
                             <a href=\"\" data-bs-toggle=\"modal\" data-bs-target=\"#DoubleAmenities\">Look amenities</a><br>
                         <!-- Modal -->
                         <div class=\"modal fade\" id=\"DoubleAmenities\" tabindex=\"-1\" aria-labelledby=\"DoubleAmenitiesLabel\" aria-hidden=\"true\">
-                        <div class=\"modal-dialog\">
-                            <div class=\"modal-content\">
-                            <div class=\"modal-header\">
-                                <h1 class=\"modal-title fs-5\" id=\"DoubleAmenitiesLabel\">Double Room Amenities</h1>
-                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                            <div class=\"modal-dialog\">
+                                <div class=\"modal-content\">
+                                <div class=\"modal-header\">
+                                    <h1 class=\"modal-title fs-5\" id=\"DoubleAmenitiesLabel\">Double Room Amenities</h1>
+                                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                                </div>
+                                <div class=\"modal-body\">
+                                    <ul class=\"list-group list-group-flush\"> 
+                                        <li class=\"list-group-item input-group\">
+                                            <p class=\"pt-3\"><i class=\"bi bi-tv\"></i> TV </p>
+                                        </li> 
+                                        <li class=\"list-group-item input-group\" >
+                                            <p class=\"pt-3\"><i class=\"bi bi-fan\"></i> Air Conditioning </p>
+                                        </li>
+                                        <li class=\"list-group-item input-group\" >
+                                            <p class=\"pt-3\"><i class=\"bi bi-wifi\"></i> Wifi </p>
+                                        </li>
+                                        <li class=\"list-group-item input-group\" >
+                                            <p class=\"pt-3\">
+                                                <img src= \"/student045/dwes/icons/terrace/chair-solid.svg\"  height=\"20px\"  width=\"20px\"/>Terrace </p>
+                                        </li>
+                                        <li class=\"list-group-item input-group\" >
+                                            <p class=\"pt-3\"><i class=\"bi bi-tv\"></i> Extra bed possible </p>
+                                        </li>
+                                    </ul>   
+                                </div>
+                                <div class=\"modal-footer\">
+                                    <a class=\"btn btn-primary\" role=\"button\" href=\"/student045/dwes/db/db_reservations_insert.php\" \>Book</a>
+                                    <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+                                </div>
+                                </div>
                             </div>
-                            <div class=\"modal-body\">
-                                <ul class=\"list-group list-group-flush\"> 
-                                    <li class=\"list-group-item input-group\">
-                                        <p class=\"pt-3\"><i class=\"bi bi-tv\"></i> TV </p>
-                                    </li> 
-                                    <li class=\"list-group-item input-group\" >
-                                        <p class=\"pt-3\"><i class=\"bi bi-fan\"></i> Air Conditioning </p>
-                                    </li>
-                                    <li class=\"list-group-item input-group\" >
-                                        <p class=\"pt-3\"><i class=\"bi bi-wifi\"></i> Wifi </p>
-                                    </li>
-                                    <li class=\"list-group-item input-group\" >
-                                        <p class=\"pt-3\"><img src= \"http://localhost/student045/dwes/icons/terrace/chair-solid.svg\"  height=\"20px\"  width=\"20px\"/> Terrace </p>
-                                    </li>
-                                    <li class=\"list-group-item input-group\" >
-                                        <p class=\"pt-3\"><i class=\"bi bi-tv\"></i> Extra bed possible </p>
-                                    </li>
-                                </ul>   
-                            </div>
-                            <div class=\"modal-footer\">
-                                <a class=\"btn btn-primary\" role=\"button\" href=\"http://localhost/student045/dwes/db/db_reservations_insert.php\" \>Book</a>
-                                <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
-                            </div>
-                            </div>
-                        </div>
                         </div>
         
                         <br><h5>Price per night</h5> 
@@ -235,9 +236,8 @@
                             
                     echo " </a> 
                     </div>
-
-                    </div> ";
-                
+                </div> ";
+                        
                 echo "
                 <!-- Suite -->
                 <div class=\"row pt-4\">
@@ -253,25 +253,25 @@
                         </div>
                         <div class=\"carousel-inner\">
                             <div class=\"carousel-item active\">
-                                <img src=\"http://localhost/student045/dwes/img/suit1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit1.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit2.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit3.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit4.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
+                                <img src=\"/student045/dwes/img/suit5.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\" >
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit6.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                             <div class=\"carousel-item\">
-                                <img src=\"http://localhost/student045/dwes/img/suit7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
+                                <img src=\"/student045/dwes/img/suit7.jpg\" class=\"d-block w-100\" width=\"75%\" height=\"75%\">
                             </div>
                         </div>
                         <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#suite\" data-bs-slide=\"prev\">
@@ -311,7 +311,9 @@
                                         <p class=\"pt-3\"><i class=\"bi bi-wifi\"></i> Wifi </p>
                                     </li>
                                     <li class=\"list-group-item input-group\" >
-                                        <p class=\"pt-3\"><img src=\"http://localhost/student045/dwes/icons/terrace/chair-solid.svg\"  height= \"20px\"  width= \"20px\" /> Terrace </p>
+                                        <p class=\"pt-3\">
+                                            <img src=\"/student045/dwes/icons/terrace/chair-solid.svg\" height= \"20px\"  width= \"20px\" />
+                                             Terrace </p>
                                     </li>
                                     <li class=\"list-group-item input-group\" >
                                         <p class=\"pt-3\"><i class=\"bi bi-tv\"></i> Extra bed possible </p>
@@ -319,7 +321,7 @@
                                 </ul>   
                             </div>
                             <div class=\"modal-footer\">
-                                <a class=\"btn btn-primary\" role=\"button\" href=\"http://localhost/student045/dwes/db/db_reservations_insert.php\">Book</a>
+                                <a class=\"btn btn-primary\" role=\"button\" href=\"/student045/dwes/db/db_reservations_insert.php\">Book</a>
                                 <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
                             </div>
                             </div>
@@ -347,9 +349,9 @@
                             <div class=\"text-center\">
                                 <h5>You have no date in or date out, please check again</h5> 
                                 <br>
-                                    <div class=\"d-grid gap-2 col-4 mx-auto m-2\">
-                                        <button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/index.php'\">Home</button>
-                                    </div>
+                                <div class=\"d-grid gap-2 col-4 mx-auto m-2\">
+                                    <button class=\"btn btn-secondary\" onclick=\"location.href='/student045/dwes/index.php'\"> Home</button>
+                                </div>
                             </div>
                         </div>
                         <div class=\"col\">
@@ -357,7 +359,7 @@
                                 <h5>Or log in to wath all your reservations</h5> 
                                 <br>
                                     <div class=\"d-grid gap-2 col-4 mx-auto m-2\">
-                                        <button class=\"btn btn-secondary\" onclick=\"location.href='http://localhost/student045/dwes/form/form_customer_select.php'\">Log in</button>
+                                        <button class=\"btn btn-secondary\" onclick=\"location.href='/student045/dwes/form/form_customer_select.php'\">Log in</button>
                                     </div>
                             </div>
                         </div>

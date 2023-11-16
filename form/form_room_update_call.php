@@ -5,7 +5,9 @@
                 <h2>Update a Room</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/form/form_room_update.php" method="POST">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/form/form_room_update.php" method="POST">
+                <!-- ";
+                    echo " -->
                 <div class="mb-3">
                     <label for="roomNumber" class="form-label">Room Number</label>
                     <input type="number" min="0" class="form-control" id="roomNumber" name="roomNumber">   

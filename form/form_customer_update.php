@@ -55,7 +55,7 @@ $problematic = $customer_desciption_array -> problematic;
             <h2>Update Customer</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_update.php" method="POST" id="bookRomms">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_update.php" method="POST" id="bookRomms">
                 <div class="mb-3">
                     <label for="customerID" class="form-label">Customer ID</label>
                     <input type="text" class="form-control" id="customerID" name="customerID" readonly value = <?php echo $customer_id; ?> >

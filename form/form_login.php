@@ -6,7 +6,7 @@
         <p class="lead">Welcome back to our hotel</p>
     </div>
     <div class="row justify-content-center my-4">
-        <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_login.php" method="POST">
+        <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_login.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com/username">

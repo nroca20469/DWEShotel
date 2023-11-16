@@ -41,9 +41,8 @@
             }
 
             $comparePasswords = strcmp($passwordCustomer, $passwordy);  //0 es que son todo igual, X es que hay algo desigual, solo es 0 si son iguales, sino da el numero de desiguales
-          //  echo $comparePasswords;
+
             if(!$comparePasswords) {
-                ///echo 'It work';
 
                 $_SESSION['name'] = $name;
                 $_SESSION['customer_id'] = $customer_id;
@@ -52,7 +51,7 @@
                 echo $_SESSION['name'];
                 echo $_SESSION['customer_id'];
                 echo $_SESSION['role'];
-                echo "<script>location.href = 'http://localhost/student045/dwes/index.php?msg=$msg';</script>";
+                echo "<script>location.href = '/student045/dwes/index.php?msg=$msg';</script>";
 
             } else {
                 echo 'Su contraseña es incorrecta';

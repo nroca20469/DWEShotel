@@ -51,7 +51,7 @@
 
             if($deleted == 0) {
                 echo  "<div class=\"text-center p-2\">
-                    <a class=\"btn btn-outlined-dark\" role=\"button\" href=\"http://localhost/student045/dwes/form/form_reservations_delete_Call.php\" \>Return</a>
+                    <a class=\"btn btn-outlined-dark\" role=\"button\" href=\"/student045/dwes/form/form_reservations_delete_call.php\" \>Return</a>
                 </div>";
             }
 

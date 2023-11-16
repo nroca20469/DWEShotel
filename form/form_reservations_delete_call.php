@@ -5,7 +5,7 @@
                 <h2>Delete a Reservation</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_reservations_delete.php" method="POST">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_reservations_delete.php" method="POST">
                 <div class="mb-3">
                     <label for="reservationNumber" class="form-label">Reservation Number</label>
                     <input type="number" min="0" class="form-control" id="reservationNumber" name="reservationNumber">   

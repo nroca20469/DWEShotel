@@ -14,8 +14,7 @@
     </div>
         
     <div class="row justify-content-center my-5">
-        <form class="col-lg-6 mb-3" action="http://localhost/student045/dwes/db/db_customer_insert_register.php" method="POST" name="formulario" id="formulario">
-
+        <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_insert_register.php" method="POST" name="formulario" id="formulario">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="name" >

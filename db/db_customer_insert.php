@@ -13,7 +13,6 @@
             $online_user = $email;
             $boton_Aviso = 0;
 
-         //   echo $surname . ' ' . $lastanme . ' ' . $customer_dni . '<br>' . $email . '<br>' . $phone_number  . '<br>VIP ' . $vip;
 
         //Connect db
             include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
@@ -27,14 +26,6 @@
 
             $insert = (($exists->num_rows) == 0) ? 1 : 0;
             $boton_aviso = ($insert == 0) ? 'The customer already exists' : null;
-
-            /*if( ($exists->num_rows) == 0){ 
-                $insert = 1;
-            } else {        
-                $boton_aviso = "The customer already exists";
-                $insert = 0;
-            }*/
-          //  echo $insert;
         
         //SQL Insert
             if($insert == 1){

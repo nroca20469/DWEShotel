@@ -1,4 +1,4 @@
-<form class="mb-3 text-end" action="http://localhost/student045/dwes/db/db_reservations_insert.php" method="POST" id="bookRomms">
+<form class="mb-3 text-end" action="/student045/dwes/db/db_reservations_insert.php" method="POST" id="bookRomms">
     <div class="mb-3 d-none">
         <label for="dateIn" class="form-label">Date in</label>
         <input type="date" class="form-control" id="dateIn" name="dateIn" value="<?php echo $date_in; ?>"> 
@@ -20,7 +20,7 @@
     <button class="btn btn-secondary" type="submit" name="submit">Book</button>
 </form>
 <!--
-<form class="mb-3" action="http://localhost/student045/dwes/db/db_reservations_insert.php" method="POST">
+<form class="mb-3" action="/student045/dwes/db/db_reservations_insert.php" method="POST">
     <div class="mb-3 d-none">
         <label for="dateIn" class="form-label">Date in</label>
         <input type="date" class="form-control" id="dateIn" name="dateIn" value="<?php // echo $date_in; ?>"> 
@@ -46,7 +46,7 @@
         </input>
     </div>
     <div class="pull-right">
-        <a href=\"http://localhost/student045/dwes/form/form_reservations_insert.php\" class=\"pull-right\">
+        <a href=\"/student045/dwes/form/form_reservations_insert.php\" class=\"pull-right\">
         <button class="btn btn-primary btn-lg" type="submit" name="submit">Book</button>
 </a>
     </div>
