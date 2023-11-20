@@ -56,12 +56,8 @@
             }
 
         }
-
-        
-
-        
-
-        
+        mysqli_free_result($isDeleted, $message, $deleted);
+        mysqli_close($conn);        
 
     ?>
 

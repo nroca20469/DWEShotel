@@ -47,7 +47,7 @@
                 }
                 echo '<br>';
             }
-             echo '</div>';
+            echo '</div>';
             echo '</div>';  
 
 
@@ -58,6 +58,9 @@
                      <button class=\"btn btn-secondary\">Home</button>
                 </div>";
         }
+
+        mysqli_free_result($connect_reservations);
+        mysqli_close($conn);
     }
 
 ?>

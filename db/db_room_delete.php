@@ -47,6 +47,9 @@
                     <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Insert another room </button></a>
                 </div>
             </div>"; 
+
+    mysqli_free_result($result);
+    mysqli_close($conn);    
 ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

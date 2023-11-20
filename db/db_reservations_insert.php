@@ -22,8 +22,8 @@
         if(isset($customer_id)){
             $sql_insert_reservation = "INSERT INTO `045_reservations`
             (customer_id, preselected_room, room_price, reservation_status, date_in, date_out) 
-            VALUES (" . $customer_id . ", " . $room_num . " , " . $room_price . ", 'booked',  '" . $date_in . "' , '" . $date_out . "' );
-            ";
+            VALUES ($customer_id, $room_num, $room_price, 'booked', '$date_in', '$date_out' );";
+            
             if ($conn->query($sql_insert_reservation) === TRUE) {
                 $boton_aviso = "Your room is now booked";
             } else {
@@ -56,6 +56,8 @@
                     </div>
                 </div>"; 
     }
+
+        mysqli_close($conn);
     
 
 ?>

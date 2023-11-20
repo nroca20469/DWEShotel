@@ -13,3 +13,6 @@
     $vip = $customer_desciption_array -> vip;
     $problematic = $customer_desciption_array -> problematic;
     Extraer info de un variable en JSON -->
+
+    <!--         mysqli_free_result($result);   -->
+    <!-- mysqli_close($conn) -->

@@ -4,14 +4,11 @@
     if(isset($_POST['submit'])){
         //Create variables
         
-            $reservation_num = $_POST['reservationNum'];
-          
+        $reservation_num = $_POST['reservationNum'];
 
-
-
-            echo "  <div class=\"text-center\">
-                        <h5>Reservation Number: $reservation_num </h5>
-                    </div>";
+        echo "  <div class=\"text-center\">
+                    <h5>Reservation Number: $reservation_num </h5>
+                </div>";
 
         //Connect to db
         include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
@@ -47,6 +44,8 @@
                 <a href=\"/student045/dwes/db/db_reservations_select.php\"><button type=\"button\" class=\"btn btn-secondary\"> Return to edit another reservation </button></a>
             </div>
 </div>";
+
+mysqli_close($conn);
    
 ?>
 

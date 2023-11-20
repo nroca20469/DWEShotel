@@ -18,8 +18,6 @@
             $horse = $_POST['horse']; 
             $boat = $_POST['boat'];
 
-
-
             echo "  <div class=\"text-center\">
                         <h5>Reservation Number: $reservation_num </h5>
                     </div>";
@@ -130,9 +128,12 @@
                 <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Return home </button></a>
                 <a href=\"/student045/dwes/form/form_reservations_update_call.php\"><button type=\"button\" class=\"btn btn-secondary\"> Return to edit another reservation </button></a>
             </div>
-</div>";
+        </div>";
        
     }
+
+    mysqli_free_result($connect_check);
+    mysqli_close($conn);    
    
 ?>
 

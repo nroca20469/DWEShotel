@@ -47,6 +47,9 @@
 
         //$boton_aviso = 0;
 
+        mysqli_free_result($connectionCheck);
+        mysqli_close($conn);
+
         //Show in screen
         echo "  <div class=\"text-center\">
             <h5>Customer name: $name $surname </h5>

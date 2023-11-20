@@ -142,8 +142,8 @@ $tv = $room_desciption_array -> TV;
 
                 <?php
                     $json = json_decode($room_description,true);
-                    var_dump($json);
-                    print_r ($json);
+                    //$hi = var_dump($json);
+                    //print_r ($json);
                     $air_conditioning = false;
                     if($json != null) {
         

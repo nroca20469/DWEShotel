@@ -8,7 +8,7 @@
         $customer_forename = $_POST['customerForename'];
         $customer_lastname = $_POST['lastname'] ;
         $customer_email = $_POST['customerEmail'];
-        $customer_phone_number = $_POST['customerNumberPhone'];
+        $customer_phone_number = $_POST['customerNumberPhone'] ?? null;
         $customer_dni = $_POST['customerDNI'];
         $customer_vip = $_POST['vip'];
         $customer_problematic = $_POST['problematic'];
@@ -57,6 +57,8 @@
                     </div>
                 </div>";
 
+       // mysqli_free_result($connectionCheck);
+        mysqli_close($conn);
     }
 
 ?>

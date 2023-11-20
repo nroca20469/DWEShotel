@@ -20,7 +20,7 @@
         foreach ($reservations as $reservation){
             echo ($reservation['reservation_number'] . ' ' . $reservation['date_in'] . ' ' . $reservation['date_out'] . ' Preselected room: ' . $reservation['preselected_room']);
            
-            if($role != 'anonymous' && $role != 'customer'){
+            if($role == 'admin'){
                 echo "<span class=\"fw-thin secondary-color btn-group m-2\">
                         <form action=\"/student045/dwes/form/form_reservations_update.php\" method =\"POST\">
                             <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
@@ -32,11 +32,21 @@
                         </form>
                     </span> ";
                 echo '<br>';
+            } else if($role == 'worker'){
+                echo "<span class=\"fw-thin secondary-color btn-group m-2\">
+                        <form action=\"/student045/dwes/form/form_reservations_update.php\" method =\"POST\">
+                            <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
+                            <button class=\"btn btn-secondary m-2 \"> Update </button>
+                        </form>
+                    </span>";
+                echo '<br>'; 
             } else {
                 echo '<br><br>';
             }
         }
-        echo '</div>';   
+        echo '</div>';  
+        mysqli_free_result($result);
+        mysqli_close($conn); 
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

@@ -51,16 +51,36 @@
                 echo $_SESSION['name'];
                 echo $_SESSION['customer_id'];
                 echo $_SESSION['role'];
-                echo "<script>location.href = '/student045/dwes/index.php?msg=$msg';</script>";
+                echo "<script>location.href = '/student045/dwes/index.php';</script>";
 
             } else {
-                echo 'Su contraseña es incorrecta';
+                $boton_aviso = 'Su contraseña es incorrecta';
             }
                 
 
         } else {
-            echo 'register';
+            $boton_aviso = 'Please register';
         }
+
+
+        echo '<div class="container text-center">
+                <div>';
+        
+            echo "  <div class=\"text-center pt-4\">
+            <h5> Login </h5>
+            </div>";
+
+        echo "  <div class=\"text-center pt-4\">
+                    <h6> $boton_aviso  </h6>
+                    <div class=\"btn-group pt-3\">
+                    <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Home </button></a>
+                        <a href=\"/student045/dwes/form/form_register.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Register </button></a>
+                        <a href=\"/student045/dwes/form/form_login.php\"><button type=\"button\" class=\"btn btn-secondary\"> Back </button></a>
+                    </div>
+                </div>"; 
+
+        mysqli_free_result($result, $comparePasswords, $boton_aviso);
+        mysqli_close($conn);
         
     ?>
 

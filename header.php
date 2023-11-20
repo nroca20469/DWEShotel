@@ -132,7 +132,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/student045/dwes/form/db_customer_select.php">See profile</a>
+                        <a class="nav-link" href="/student045/dwes/db/db_customer_select.php">See profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/student045/dwes/form/form_reservation_select.php">Reserve now</a>
@@ -175,6 +175,15 @@
                             <li><a class="dropdown-item" href="/student045/dwes/db/db_room_select_all.php">Select</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_room_insert.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_room_update_call.php">Update</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Today
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_check_in.php">Check in</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_check_out.php">Check out</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

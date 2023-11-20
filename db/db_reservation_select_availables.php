@@ -6,11 +6,9 @@
             $date_out = null;
             $reservations = null; 
             if (isset($_POST['submit']) && isset($_POST['dateIn']) && isset($_POST['dateOut'])){
-                $date_in = $_POST['dateIn'];
-                $date_out = $_POST['dateOut'];
-            } else {
-                echo 'Nothing happens';
-            }
+                // $date_in = $_POST['dateIn'];
+                // $date_out = $_POST['dateOut'];
+            }   
                 
                 
         //Connect database 
@@ -367,7 +365,8 @@
                 </div>";
             }    
         }
-            
+        mysqli_free_result($result);
+        mysqli_close($conn);
     
     ?>
    

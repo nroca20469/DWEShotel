@@ -31,6 +31,8 @@
         }
         echo '</div>';
 
+        mysqli_close($conn);
+        mysqli_free_result($connectar);
 ?>   
 
 

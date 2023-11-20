@@ -1,0 +1,14 @@
+{
+    "ticket_num": {
+        "service" : "",
+        "date" : "",
+        "total price": "",
+        "details": [
+            {
+                "service": "",
+                "uds": 0,
+                "price": ""
+            }
+        ]
+    }
+}

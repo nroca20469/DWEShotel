@@ -8,9 +8,9 @@
             $customer_dni  = $_POST['customerDNI'];
             $email  = $_POST['customerEmail'];
             $phone_number  = $_POST['customerNumberPhone'];
-            $vip  = $_POST['vip'];
-            $problematic = $_POST['problematic'];
-            $online_user = $email;
+            $vip  = $_POST['vip'] ?? false;
+            $problematic = $_POST['problematic'] ?? false;
+            $online_user = $email ?? null;
             $boton_Aviso = 0;
 
 
@@ -50,6 +50,9 @@
                     <a href=\"/student045/dwes/form/form_room_insert.php\"><button type=\"button\" class=\"btn btn-secondary\"> Insert another room </button></a>
                 </div>
             </div>"; 
+
+            mysqli_close($conn);
+            mysqli_free_result($exists, $insert);
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

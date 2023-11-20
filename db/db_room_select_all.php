@@ -19,7 +19,7 @@
 
         foreach ($rooms as $room){
             echo ($room['room_number'] . ' ' . $room['room_category'] . ' ' . $room['room_price']);
-            if($role != 'anonymous' && $role != 'customer'){
+            if($role == 'admin'){
                 echo "<span class=\"fw-thin secondary-color btn-group m-2\">
                         <form action=\"/student045/dwes/form/form_room_update.php\" method =\"POST\">
                             <input name=\"roomNumber\" value = \"" . $room['room_number'] . "\" hidden>
@@ -31,12 +31,26 @@
                         </form>
                     </span> ";
                 echo '<br>';
-            } else {
+
+            } else if($role == 'worker'){
+                echo "<span class=\"fw-thin secondary-color btn-group m-2\">
+                        <form action=\"/student045/dwes/form/form_room_update.php\" method =\"POST\">
+                            <input name=\"roomNumber\" value = \"" . $room['room_number'] . "\" hidden>
+                            <button class=\"btn btn-secondary m-2 \"> Update </button>
+                        </form>
+                    </span>";
+                echo '<br>';
+
+            }else{
                 echo '<br><br>';
             }
              
         }
-        echo '</div>';  
+        echo '</div>';
+        
+        mysqli_free_result($result);
+        mysqli_close($conn);
+
     ?>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>
