@@ -1,14 +1,14 @@
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
     
-    <div class="container-lg">
-        <div class="text-center">
-                <h2>New Customer</h2>
-                <p class="lead">Insert all the data that we ask for, thank you</p>
-            </div>
-            <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_insert.php" method="POST">
-                <div class="mb-3">
+<div class="container-lg">
+    <div class="text-center">
+            <h2>New Customer</h2>
+            <p class="lead">Insert all the data that we ask for, thank you</p>
+        </div>
+        <div class="row justify-content-center my-5">
+        <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_insert.php" method="POST">
+            <div class="mb-3">
                     <label for="surname" class="form-label">Surname</label>
                     <input type="text" class="form-control" id="surname" name="surname">
                 </div>

@@ -1,4 +1,4 @@
-    <footer class="mt-3 mb-4 px-4 fixed-bottom bg-white">
+    <footer class="mt-3 pb-4 px-4 fixed-bottom bg-white">
        <!-- <a href="#" class="navbar-brand">
             <div>
                 <span class="fw-bold secondary-color">

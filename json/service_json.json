@@ -31,9 +31,14 @@
             },
             "bar":[
                 {
-                    "name": "",
-                    "price/ud": "",
-                    "uds": ""
+                    "name": "wine",
+                    "price/ud": "10.0",
+                    "uds": "1"
+                },
+                {
+                    "name": "beer",
+                    "price/ud": "5.00",
+                    "uds": "1"
                 }
             ],
             "buffet libre": {
@@ -63,7 +68,7 @@
             }
         }, 
         "External services": {
-            "rent_a_vehicle": {
+            "rent a vehicle": {
                 "name": "rent_a_vehicle",
                 "price": "",
                 "uds": ""

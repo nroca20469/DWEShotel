@@ -45,6 +45,11 @@
                         } else {
                              echo $reservation['room_number'] . '</td>';
                         }
+
+                        $date_in = $reservation['date_in'];
+                        $date_out = $reservation['date_out'];
+//                        include($_SERVER['DOCUMENT_ROOT'] . '/student045/db/db_reservation_select_room_number.php');
+
                     echo "<td>
                             <span class=\"fw-thin secondary-color btn-group m-2\">
                                 <form action=\"/student045/dwes/form/form_reservations_update.php\" method =\"POST\">

@@ -10,5 +10,19 @@
                 "price": ""
             }
         ]
+    },
+
+    "": {
+        "service": "",
+        "uds": 0,
+        "price": 0,
+        "date": "",
+        "total price": 0
     }
+
+
+
 }
+
+
+
