@@ -3,17 +3,25 @@ const service = document.getElementById('service');
 const price = document.getElementById('priceJS');
 const totalPrice = document.getElementById('totalPrice');
 const persons = document.getElementById('uds');
-const bar = document.getElementById('bar');
 const priceHour = document.getElementById('priceHour');
+const bar = document.getElementById('bar');
+const internBar = document.getElementById('intern-bar')
 const unidadesBar = document.getElementById('unidadBar');
 const priceBar = document.getElementById('priceBar');
 
 service.addEventListener('change', (e) => {
     let price2 = e.target.value;
-   // console.log(price2);
+    console.log(price2);
  
     separarComa(price2);
     calcularTotal();
+}); 
+
+internBar.addEventListener('change', (e) => {
+    let price2 = e.target.value;
+    console.log(price2);
+ 
+    separarComaBar(price2);
 }); 
 
 persons.addEventListener('change', () => {
@@ -21,21 +29,30 @@ persons.addEventListener('change', () => {
 });
 
 unidadesBar.addEventListener('change', (e) => {
-    let unidades = e.value;
-    console.log(unidadesBar);
+    let unidades = +unidadesBar.value;
+    console.log(unidades);
+    calcularBar(unidades);
 });
-
-function calcularBar() {
-
-}
 
 function separarComa(value) {
     let array = value.split(',');
-  //  console.log(array);
+    //console.log(priceHour.value.trim);
+    console.log(array[1]);
+    priceHour.value = array[1] + ".00";  //PASAR VALOR DE PRECIO A PRICEHOUR
+    console.log(priceHour.value);
+x
 
-    price.innerText = array[1];
-    //console.log(price);
-    serviceMyores(array[0]);
+    serviceMyores(array[0]); 
+}
+
+function separarComaBar(value) {
+    let array = value.split(',');
+    priceBar.innerText = +array[1] + ".00";
+    calcularBar(unidadesBar.value);
+}
+
+function calcularBar(unidades){
+    totalPrice.innerText = unidades * +priceBar.innerHTML + '.00';
 }
 
 

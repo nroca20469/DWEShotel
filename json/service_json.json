@@ -32,12 +32,12 @@
             "bar":[
                 {
                     "name": "wine",
-                    "price/ud": "10.0",
+                    "price": "10.0",
                     "uds": "1"
                 },
                 {
                     "name": "beer",
-                    "price/ud": "5.00",
+                    "price": "5.00",
                     "uds": "1"
                 }
             ],

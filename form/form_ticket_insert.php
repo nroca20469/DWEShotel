@@ -15,7 +15,11 @@
     </div>
     <div class="row justify-content-center my-5">
         <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_ticket_insert.php" method="POST">
-            <div class="mb-3">
+        <div class="mb-3">
+            <label for="roomNumber" class="form-label">Room Number</label>
+            <input type="number" class="form-control" name="roomNumber">
+        </div>    
+        <div class="mb-3">
                 <label for="service" class="form-label">Service</label>
                 <select class="form-select" id="service" aria-label="Service" name="service">
                     <option value="">Seleccione una opcion</option>
@@ -32,11 +36,11 @@
                 <input type="number" class="form-control" value="1" name="uds" id="uds">
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="date" class="form-label">Day</label>     
                 <input type="datetime-local" class="form-control" name="date" value ="<?php echo date('Y-m-d H:i:s'); ?>" readonly>
             </div>
-             
+              -->
             <!-- PROVAR I MIRAR SI ES FACTIBLE -->
 
             <?php 
@@ -48,22 +52,26 @@
                      $servicess = json_decode($service_description);
                     } 
                 }
-                
-            ?>
+                ?>
             <div class="mb-3" id="bar" style="display: none;">
                 <label for="bar">Name</label>
-                <select class="form-select mb-3" id="service" aria-label="Service" name="service">
+                <select class="form-select mb-3" id="intern-bar" aria-label="Service" name="serviceBar">
                     <option value="">Seleccione una opcion</option>
                     
                     <?php 
                         foreach ($servicess as $service) {
                             foreach($service as $uni){
+                                $nombre;
+                                $precio;
                                 foreach($uni as $key=>$value) {
                                 echo $key . ' ';
                                     if($key == 'name') {
-                                        echo "<option value=\"{$value}\" > {$value} </option>";
+                                        $nombre = $value;
+                                    } else if($key == 'price') {
+                                        $precio = $value;
                                     }
                                 }
+                                echo "<option value=\"{$nombre},{$precio}\" > {$nombre} </option>";
                             }
                         }
                     ?>
@@ -73,17 +81,19 @@
                 <input type="number" class="form-control mb-3" name="unidadBar" id="unidadBar" value ="1">
 
                 <label for="priceBar" class="form-label3">Price</label>
-                <span class="form-control mb-" name="priceBar" id="priceBar"> 0.00 </span>
+                <span class="form-control mb-3" name="priceBar" id="priceBar"> 0.00 </span>
             </div>
 
             <div class="mb-4" id="priceHour">
                 <label for="price" class="form-label">Price per hour</label>
-                <span class="form-control" id="priceJS" name="price"> 0.00 </span>
+                <span class="form-control" id="priceJS">0.00</span>
+                <!-- <input type="text" class="form-control" id="priceJS" name="price" value="0.00" readonly> -->
             </div>
 
             <div class="mb-3">
-                <label for="price" class="form-label fw-bold">Total price: </label>
-                <span id="totalPrice"> 0.00 </span>
+                <label for="totalPrice" class="form-label fw-bold">Total price: </label>
+                <span class="form-control" id="totalPrice">0.00</span>
+                <!-- <input type="text" id="totalPrice" name="totalPrice" class="form-control" value="0.00" readonly> -->
             </div>
 
             <div class="mb-3 text-center">
