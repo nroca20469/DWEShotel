@@ -13,24 +13,26 @@
         $sql_reservations = "SELECT * 
         FROM 045_reservations
         INNER JOIN 045_users ON 045_reservations.customer_id = 045_users.customer_id
-        WHERE date_out = '$date' AND  reservation_status = 'check_in';";
+        WHERE date_out = '$date'";
+
+
 
         $result = mysqli_query($conn, $sql_reservations);
         $reservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        if($result->num_rows > 1) {
+        // print_r($reservations);
+        if($result->num_rows > 0) {
             echo '<div class="container text-center">
             <div>';
             
             echo "  <div class=\"text-center pt-4\">
-            <h5> Today's check ins </h5>
+            <h5> Today's check outs </h5>
             </div>";
 
             echo '<table class="text-center mt-4">
                     <thead class="text-center ">
-                        <th class="p-2 m-2">Reservation Number</th>
-                        <th class="p-2 m-2">Customer DNI</th>
-                        <th class="p-2 m-2">Customer Surname</th>
+                        <th class="p-2 m-2"> Reservation Number </th>
+                        <th class="p-2 m-2"> Customer DNI </th>
+                        <th class="p-2 m-2"> Customer Name </th>
                         <th class="p-2 m-2"> Room Number </th>
                     </thead>';
                     
@@ -38,19 +40,22 @@
                 echo '<tr class="text-center">';
                     echo '<td>' . $reservation['reservation_number'] . '</td> 
                         <td> ' . $reservation['customer_dni'] . '</td>
-                        <td>' . $reservation['customer_forename'] . '</td>
+                        <td>' . $reservation['customer_forename'] . ' ' . $reservation['customer_lastname'] . '</td>
                         <td>' . $reservation['room_number'] . '</td>';
                     echo "<td>
                             <span class=\"fw-thin secondary-color btn-group m-2\">
                                 <form action=\"/student045/dwes/form/form_reservations_update.php\" method =\"POST\">
                                     <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
                                     <button class=\"btn btn-secondary m-2 \"> Update </button>
-                                </form>
-                                <form action=\"/student045/dwes/db/db_reservation_update_check_out.php\" method =\"POST\">
+                                </form>";
+                if($reservation['reservation_status'] == 'check_in') {
+                    echo "<form action=\"/student045/dwes/db/db_reservation_update_check_out.php\" method =\"POST\">
                                     <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
                                     <button class=\"btn btn-secondary m-2 \" type=\"submit\" name=\"submit\"> Check out </button>
-                                </form>
-                                <form action=\"/student045/dwes/db/db_invoice_select.php\" method =\"POST\">
+                                </form>";
+                }
+                                
+                            echo "<form action=\"/student045/dwes/db/db_invoice_select.php\" method =\"POST\">
                                     <input name=\"reservationNumber\" value = \"" . $reservation['reservation_number'] . "\" hidden>
                                     <button class=\"btn btn-secondary m-2\" type=\"submit\" name=\"submit\"> View invoice </button>
                                 </form>
@@ -59,11 +64,13 @@
                     echo '</tr>';        
             }
             echo '</table>';
+            mysqli_free_result($result);
+
         } else {
 
             echo "  <div class=\"text-center\">
                     <p> $date </p>
-                    <p> It looks like theres no check ins today </p>
+                    <p> It looks like theres no check outs today </p>
                     <div class=\"btn-group\">
                         <a href=\"/student045/dwes/index.php\"><button type=\"button\" class=\"btn btn-secondary me-2\"> Return home </button></a>
                         <a href=\"/student045/dwes/db/db_reservations_select_check_out.php\"><button type=\"button\" class=\"btn btn-secondary\"> Look at the check outs </button></a>
@@ -74,7 +81,6 @@
     }    
         echo '</div>
         </div>';
-        mysqli_free_result($result, $date);
         mysqli_close($conn);
 ?>
 

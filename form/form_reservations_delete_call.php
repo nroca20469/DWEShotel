@@ -11,7 +11,7 @@
                     <input type="number" min="0" class="form-control" id="reservationNumber" name="reservationNumber">   
                 </div>
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
-                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_delete.php')?> 
+                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_delete.php');?> 
                 </div>
             </form>
         </div>

@@ -29,7 +29,8 @@
             $boton_aviso = "The room wasn't found in the database";
         }
         
-        
+           mysqli_free_result($result);
+    mysqli_close($conn);    
 
     } else {
         $boton_aviso = 'Room number not set';
@@ -48,8 +49,7 @@
                 </div>
             </div>"; 
 
-    mysqli_free_result($result);
-    mysqli_close($conn);    
+ 
 ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

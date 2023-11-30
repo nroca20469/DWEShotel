@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="d-grid gap-2 col-4 mx-auto m-2">
-                <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_customer_delete.php')?>    
+                    <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_customer_delete.php')?>    
                 </div>
             </form>
         </div>

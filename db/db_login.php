@@ -52,6 +52,8 @@
                 echo $_SESSION['customer_id'];
                 echo $_SESSION['role'];
                 echo "<script>location.href = '/student045/dwes/index.php';</script>";
+                mysqli_free_result($result, $comparePasswords, $boton_aviso);
+                mysqli_close($conn);
 
             } else {
                 $boton_aviso = 'Su contraseña es incorrecta';
@@ -79,8 +81,7 @@
                     </div>
                 </div>"; 
 
-        mysqli_free_result($result, $comparePasswords, $boton_aviso);
-        mysqli_close($conn);
+       
         
     ?>
 

@@ -12,7 +12,7 @@ $room_price;
 $reservation_status;
 $date_in;
 $date_out;
-$extras;
+// $extras;
 
 //Connectar a db
 include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
@@ -41,7 +41,7 @@ if($connect->num_rows == 0){
         $reservation_status = $reservation['reservation_status'];
         $date_in = $reservation['date_in'];
         $date_out = $reservation['date_out'];
-        $extras = $reservation['extras'];
+        // $extras = $reservation['extras'];
     }
     // $reservation_extras = json_decode($extras);
     // if(!empty($reservation_extras)){
@@ -90,8 +90,48 @@ if($connect->num_rows == 0){
                 </div>
 
                 <div class="mb-3">
-                    <label for="roomNum" class="form-label">Room Number</label>
-                    <input type="numeric" class="form-control" id="roomNum" name="roomNum" value="<?php echo $room_number; ?>">
+                    <label for="roomNumber" class="form-label">Room Number</label>
+                    <!-- <input type="numeric" class="form-control" id="roomNum" name="roomNum" value="<?php echo $room_number; ?>"> -->
+                    <?php 
+                         if($room_number == null || $room_number == 0) {
+                            //Get room available in types
+                            $sql_room_type = "SELECT room_category FROM 045_rooms WHERE room_number = (SELECT preselected_room FROM 045_reservations WHERE reservation_number = {$reservation['reservation_number']})";
+                            $result = mysqli_query($conn, $sql_room_type);
+                            $room_type = mysqli_fetch_assoc($result);
+                            
+                            $sql = "SELECT room_number
+                            FROM 045_rooms
+                            WHERE room_number NOT IN (SELECT preselected_room
+                                                        FROM 045_reservations
+                                                        WHERE date_in < '{$reservation['date_out']}'
+                                                        AND date_out > '{$reservation['date_in']}')
+                            AND room_category = '{$room_type['room_category']}'
+                            AND room_status = 1";
+                            $result_sql = mysqli_query($conn, $sql);
+                            $room_numbers = mysqli_fetch_all($result_sql, MYSQLI_ASSOC);
+                            echo '<select class="form-select" aria-label="Room Number"  name="roomNumber" type="select">';
+                            echo "<option value=\"\" selected > Eliga una opcion </option>";
+                            foreach($room_numbers as $room_number) {
+                                echo "<option value=\"{$room_number['room_number']}\"> {$room_number['room_number']} </option>";
+                            }
+                            
+                            echo "</select>";
+                        } else {
+                             echo ' <input type="numeric" class="form-control" name="roomNumber" value="' .  $room_number . '" readonly>';
+                        }
+
+                    
+                    
+                    // echo '<select class="form-select" aria-label="Room Number"  name="roomNumber" type="select">';
+                            // echo "<option value=\"\" selected > Eliga una opcion </option>";
+                            // foreach($room_numbers as $room_number) {
+                            //     print_r($room_number['room_number']);
+                            //     echo "<option value=\"{$room_number['room_number']}\"> {$room_number['room_number']} </option>";
+                            // }
+                            
+                            echo "</select>";
+                            
+                            ?>
                 </div>
 
                 <div class="mb-3">
@@ -156,134 +196,134 @@ if($connect->num_rows == 0){
 
                 <?php
 
-                    $json = json_decode($extras,true);
-                    //var_dump($json);
-                   // echo "<br>"; 
-                    $laundry = false; $gym = false; $spa = false; $horseTrail = false; $boat = false;
-                if($json != null) {
+                //     $json = json_decode($extras,true);
+                //     //var_dump($json);
+                //    // echo "<br>"; 
+                //     $laundry = false; $gym = false; $spa = false; $horseTrail = false; $boat = false;
+                // if($json != null) {
                    
-                    foreach ($json['Internal services'] as $key => $value){
-                        //echo "$key: " . $value['Name'] . " \n";
-                        $internalName = $value['Name'];
+                //     foreach ($json['Internal services'] as $key => $value){
+                //         //echo "$key: " . $value['Name'] . " \n";
+                //         $internalName = $value['Name'];
                        
-                      //  echo "$key: " . $value['Price'] . " \n";
-                        $internalPrice = $value['Price'];
+                //       //  echo "$key: " . $value['Price'] . " \n";
+                //         $internalPrice = $value['Price'];
 
-                        if($internalName == "Laundry"){
-                            $laundry = true;
-                            $laundryPrice = $internalPrice;
-                        } else if($internalName == "Gym") {
-                            $gym = true;
-                            $gymPrice = $internalPrice;
-                        } else if($internalName == "Spa"){
-                            $spa = true;
-                            $spaPrice = $internalPrice;
-                        }
-                    };
+                //         if($internalName == "Laundry"){
+                //             $laundry = true;
+                //             $laundryPrice = $internalPrice;
+                //         } else if($internalName == "Gym") {
+                //             $gym = true;
+                //             $gymPrice = $internalPrice;
+                //         } else if($internalName == "Spa"){
+                //             $spa = true;
+                //             $spaPrice = $internalPrice;
+                //         }
+                //     };
                     
 
-                    foreach ($json['External services'] as $key => $value){
-                      //  echo "$key: " . $value['Name'] . " \n";
-                        $externalName = $value['Name'];
+                //     foreach ($json['External services'] as $key => $value){
+                //       //  echo "$key: " . $value['Name'] . " \n";
+                //         $externalName = $value['Name'];
 
-                    //    echo "$key: " . $value['Price'] . " \n";
-                        $externalPrice = $value['Price'];
+                //     //    echo "$key: " . $value['Price'] . " \n";
+                //         $externalPrice = $value['Price'];
 
-                        if($externalName == "Horse trail"){
-                            $horseTrail = true;
-                            $horsePrice = $externalPrice;
-                        } else if ($externalName == "Boat trail"){
-                            $boat = true;
-                            $boatPrice = $externalPrice;
-                        }
-                    };
-                }
-                ?>
-                    <div class="mx-2 pt-1 text-center">
-                        <label for="internal" class="form-label"><h5>External Services</h5></label>
-                    </div>
+                //         if($externalName == "Horse trail"){
+                //             $horseTrail = true;
+                //             $horsePrice = $externalPrice;
+                //         } else if ($externalName == "Boat trail"){
+                //             $boat = true;
+                //             $boatPrice = $externalPrice;
+                //         }
+                //     };
+                // }
+                // ?>
+                <!-- //     <div class="mx-2 pt-1 text-center">
+                //         <label for="internal" class="form-label"><h5>External Services</h5></label>
+                //     </div> -->
 
-                <?php 
+                 <?php 
                     
-                    echo "<div class=\"mb-3\">
-                    <label for=\"horse\" class=\"form-label\">Horse trail</label>
-                    <select class=\"form-select\" aria-label=\"Horse\"  name=\"horse\" type=\"select\">";
-                    if($horseTrail){
-                        echo "<option value=\"true\" selected> Si </option>
-                                <option value=\"false\"> No </option>
-                            </select>
-                        </div>";
-                    } else {
-                        echo "<option value=\"true\"> Si </option>
-                                <option value=\"false\" selected> No </option>
-                            </select>
-                        </div>"; 
-                    } 
-                    echo "<div class=\"mb-3\">
-                    <label for=\"boat\" class=\"form-label\">Boat trail</label>
-                    <select class=\"form-select\" aria-label=\"Boat\"  name=\"boat\" type=\"select\">";
-                    if($boat){
-                        echo "<option value=\"true\" selected> Si </option>
-                                <option value=\"false\"> No </option>
-                            </select>
-                        </div>";
-                    } else {
-                        echo "<option value=\"true\"> Si </option>
-                                <option value=\"false\" selected> No </option>
-                            </select>
-                        </div>"; 
-                    } 
-                ?>
+                //     echo "<div class=\"mb-3\">
+                //     <label for=\"horse\" class=\"form-label\">Horse trail</label>
+                //     <select class=\"form-select\" aria-label=\"Horse\"  name=\"horse\" type=\"select\">";
+                //     if($horseTrail){
+                //         echo "<option value=\"true\" selected> Si </option>
+                //                 <option value=\"false\"> No </option>
+                //             </select>
+                //         </div>";
+                //     } else {
+                //         echo "<option value=\"true\"> Si </option>
+                //                 <option value=\"false\" selected> No </option>
+                //             </select>
+                //         </div>"; 
+                //     } 
+                //     echo "<div class=\"mb-3\">
+                //     <label for=\"boat\" class=\"form-label\">Boat trail</label>
+                //     <select class=\"form-select\" aria-label=\"Boat\"  name=\"boat\" type=\"select\">";
+                //     if($boat){
+                //         echo "<option value=\"true\" selected> Si </option>
+                //                 <option value=\"false\"> No </option>
+                //             </select>
+                //         </div>";
+                //     } else {
+                //         echo "<option value=\"true\"> Si </option>
+                //                 <option value=\"false\" selected> No </option>
+                //             </select>
+                //         </div>"; 
+                //     } 
+                // ?>
 
-                <div class="mx-2 pt-1 text-center">
-                    <label for="external" class="form-label"><h5>Internal Services</h5></label>
-                </div>
+                <!-- // <div class="mx-2 pt-1 text-center">
+                //     <label for="external" class="form-label"><h5>Internal Services</h5></label>
+                // </div> -->
 
-                <?php 
-                    echo "<div class=\"mb-3\">
-                    <label for=\"laundry\" class=\"form-label\">Laundry</label>
-                    <select class=\"form-select\" aria-label=\"Laundry\"  name=\"laundry\" type=\"select\">";
-                    if($laundry){
-                        echo "<option value=\"true\" selected> Si </option>
-                                <option value=\"false\"> No </option>
-                            </select>
-                        </div>";
-                    } else {
-                        echo "<option value=\"true\"> Si </option>
-                                <option value=\"false\" selected> No </option>
-                            </select>
-                        </div>"; 
-                    } 
+                 <?php 
+                //     echo "<div class=\"mb-3\">
+                //     <label for=\"laundry\" class=\"form-label\">Laundry</label>
+                //     <select class=\"form-select\" aria-label=\"Laundry\"  name=\"laundry\" type=\"select\">";
+                //     if($laundry){
+                //         echo "<option value=\"true\" selected> Si </option>
+                //                 <option value=\"false\"> No </option>
+                //             </select>
+                //         </div>";
+                //     } else {
+                //         echo "<option value=\"true\"> Si </option>
+                //                 <option value=\"false\" selected> No </option>
+                //             </select>
+                //         </div>"; 
+                //     } 
 
-                    echo "<div class=\"mb-3\">
-                    <label for=\"gym\" class=\"form-label\">Gym</label>
-                    <select class=\"form-select\" aria-label=\"Gym\"  name=\"gym\" type=\"select\">";
-                    if($gym){
-                        echo "<option value=\"true\" selected> Si </option>
-                                <option value=\"false\"> No </option>
-                            </select>
-                        </div>";
-                    } else {
-                        echo "<option value=\"true\"> Si </option>
-                                <option value=\"false\" selected> No </option>
-                            </select>
-                        </div>"; 
-                    } 
+                //     echo "<div class=\"mb-3\">
+                //     <label for=\"gym\" class=\"form-label\">Gym</label>
+                //     <select class=\"form-select\" aria-label=\"Gym\"  name=\"gym\" type=\"select\">";
+                //     if($gym){
+                //         echo "<option value=\"true\" selected> Si </option>
+                //                 <option value=\"false\"> No </option>
+                //             </select>
+                //         </div>";
+                //     } else {
+                //         echo "<option value=\"true\"> Si </option>
+                //                 <option value=\"false\" selected> No </option>
+                //             </select>
+                //         </div>"; 
+                //     } 
 
-                    echo "<div class=\"mb-3\">
-                    <label for=\"spa\" class=\"form-label\">Spa</label>
-                    <select class=\"form-select\" aria-label=\"Spa\"  name=\"spa\" type=\"select\">";
-                    if($gym){
-                        echo "<option value=\"true\" selected> Si </option>
-                                <option value=\"false\"> No </option>
-                            </select>
-                        </div>";
-                    } else {
-                        echo "<option value=\"true\"> Si </option>
-                                <option value=\"false\" selected> No </option>
-                            </select>
-                        </div>"; 
-                    } 
+                //     echo "<div class=\"mb-3\">
+                //     <label for=\"spa\" class=\"form-label\">Spa</label>
+                //     <select class=\"form-select\" aria-label=\"Spa\"  name=\"spa\" type=\"select\">";
+                //     if($gym){
+                //         echo "<option value=\"true\" selected> Si </option>
+                //                 <option value=\"false\"> No </option>
+                //             </select>
+                //         </div>";
+                //     } else {
+                //         echo "<option value=\"true\"> Si </option>
+                //                 <option value=\"false\" selected> No </option>
+                //             </select>
+                //         </div>"; 
+                //     } 
 
                 ?>
 

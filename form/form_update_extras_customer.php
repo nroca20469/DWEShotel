@@ -15,11 +15,11 @@
     </div>
     <div class="row justify-content-center my-5">
         <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_ticket_insert.php" method="POST">
-        <div class="mb-3">
-            <label for="roomNumber" class="form-label">Room Number</label>
-            <input type="number" class="form-control" name="roomNumber">
-        </div>    
-        <div class="mb-3">
+            <div class="mb-3">
+                <label for="reservationNumber" class="form-label">Reservation Number</label>
+                <input type="number" class="form-control" name="reservationNumber" value="<?php echo $_POST['reservationNum'];?>">
+            </div>    
+            <div class="mb-3">
                 <label for="service" class="form-label">Service</label>
                 <select class="form-select" id="service" aria-label="Service" name="service">
                     <option value="">Seleccione una opcion</option>
@@ -97,8 +97,5 @@
         </form>
     </div>
 </div>
-
-<script src="/student045/dwes/js/scriptTicketInsert.js"></script>
-
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/footer.php')?>

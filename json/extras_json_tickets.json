@@ -1,28 +1,82 @@
-{
-    "ticket_num": {
-        "service" : "",
-        "date" : "",
-        "total price": "",
+{"202311241335176340" : {
+    "service name": "gym",
+    "date": "2023-11-24",
+    "total price": 40.00,
+    "details": {"service" : "gym",
+    "uds": 2,
+    "price" : 20.00 ,
+    "date": "2023-11-24",
+    "total": 40} 
+},"202311241335386340" : {
+    "service name": "gym",
+    "date": "2023-11-24",
+    "total price": 40.00,
+    "details": {"service" : "gym",
+    "uds": 2,
+    "price" : 20.00 ,
+    "date": "2023-11-24",
+    "total": 40} 
+},"202311241538466320" : {
+    "service name": "laundry",
+    "date": "2023-11-24",
+    "total price": 20.00,
+    "details": {"service" : "laundry",
+    "uds": 2,
+    "price" : 10.00 ,
+    "date": "2023-11-24",
+    "total": 20} 
+},"202311241540056330" : {
+    "service name": "bar",
+    "date": "2023-11-24",
+    "total price": 30.00,
+    "details": {"service" : "bar",
+        "uds": 0,
+        "price" : 0,
+        "date": "2023-11-24",
         "details": [
             {
-                "service": "",
-                "uds": 0,
-                "price": ""
-            }
-        ]
-    },
-
-    "": {
-        "service": "",
+                "name": "wine",
+                "price": "10.0",
+                "uds": "3"
+            }],
+        "total": 30}
+},"202311241857556340" : {
+    "service name": "bar",
+    "date": "2023-11-24",
+    "total price": 40.00,
+    "details": {"service" : "bar",
         "uds": 0,
-        "price": 0,
-        "date": "",
-        "total price": 0
-    }
-
-
-
-}
-
-
-
+        "price" : 0,
+        "date": "2023-11-24",
+        "details": [
+            {
+                "name": "wine",
+                "price": "10.00",
+                "uds": "4"
+            }],
+        "total": 40}
+},"202311246320" : {
+    "service name": "bar",
+    "date": "2023-11-24",
+    "total price": 20.00,
+    "details": {"service" : "bar",
+    "uds": 0,
+    "price" : 0,
+    "date": "2023-11-24",
+    "details": [
+        {
+            "name": "wine",
+            "price": "10.0",
+            "uds": "2"
+        }],
+    "total": 20}
+},"202311246340" : {
+    "service name": "gym",
+    "date": "2023-11-24",
+    "total price": 40.00,
+    "details": {"service" : "gym",
+"uds": 2,
+"price" : 20.00 ,
+"date": "2023-11-24",
+"total": 40} 
+}}

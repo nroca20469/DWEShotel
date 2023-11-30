@@ -5,6 +5,12 @@
         //Create variables
         
             $reservation_num = $_POST['reservationNumber'];
+            
+            $preselected_room = $_POST['preselectedRoom'];
+            $room_number = $_POST['roomNumber'] ?? $preselected_room;
+            echo $room_number;
+            echo $preselected_room;
+
           
             echo "  <div class=\"text-center\">
                         <h5>Reservation Number: $reservation_num </h5>
@@ -17,7 +23,8 @@
             
             //Update cancel reservation
                 $update_reservation = "UPDATE 045_reservations 
-                                    SET reservation_status = 'check_in' 
+                                    SET reservation_status = 'check_in',
+                                    room_number = $room_number
                                     WHERE reservation_number = $reservation_num";
 
                 //$update = mysqli_query($conn, $update_reservation);

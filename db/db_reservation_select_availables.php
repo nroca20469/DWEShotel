@@ -6,8 +6,8 @@
             $date_out = null;
             $reservations = null; 
             if (isset($_POST['submit']) && isset($_POST['dateIn']) && isset($_POST['dateOut'])){
-                // $date_in = $_POST['dateIn'];
-                // $date_out = $_POST['dateOut'];
+                 $date_in = $_POST['dateIn'];
+                 $date_out = $_POST['dateOut'];
             }   
                 
                 
@@ -16,6 +16,7 @@
 
         //Fetch data
         if($date_in != null && $date_out != null) {
+            // echo 'no pasa';
             if($date_in <  $date_out) {
                 $sql = "SELECT room_number, room_category, room_price
                         FROM 045_rooms
@@ -126,7 +127,7 @@
                         <p> " . $reservations[0]['room_price'] . "</p>";
                         $room_num = $reservations[0]['room_number'];
                         $room_price = $reservations[0]['room_price'];
-                            include $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'; 
+                            include ($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'); 
                     echo " </a> 
                     </div>
                 </div> ";
@@ -230,7 +231,7 @@
                         ";
                         $room_num = $reservations[1]['room_number'];
                         $room_price = $reservations[1]['room_price'];
-                            include $_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'; 
+                            include ($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/form/form_reservations_insert.php'); 
                             
                     echo " </a> 
                     </div>
@@ -365,8 +366,7 @@
                 </div>";
             }    
         }
-        mysqli_free_result($result);
-        mysqli_close($conn);
+       mysqli_close($conn);
     
     ?>
    

@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,8 +56,8 @@
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_room_delete_call.php">Delete</a></li>
                         </ul>
                     </li>
-                    
-                        <a class="nav-link drop<li class="nav-item dropdown">down-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Customers
                         </a>
                         <ul class="dropdown-menu">
@@ -77,6 +76,17 @@
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_delete_call.php">Delete</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tickets
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_all.php">Select</a></li> -->
+                            <li><a class="dropdown-item" href="/student045/dwes/form/form_ticket_insert.php">Insert</a></li>
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_delete_call.php">Delete</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -184,7 +194,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_check_in.php">Check in</a></li>
-                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_check_out-+.php">Check out</a></li>
+                            <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_check_out.php">Check out</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -205,6 +215,17 @@
                             <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_all.php">Select</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservation_select.php">Insert</a></li>
                             <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tickets
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/db/db_reservations_select_all.php">Select</a></li> -->
+                            <li><a class="dropdown-item" href="/student045/dwes/form/form_ticket_insert.php">Insert</a></li>
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_update_call.php">Update</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="/student045/dwes/form/form_reservations_delete_call.php">Delete</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">

@@ -38,16 +38,16 @@ function separarComa(value) {
     let array = value.split(',');
     //console.log(priceHour.value.trim);
     console.log(array[1]);
-    priceHour.value = array[1] + ".00";  //PASAR VALOR DE PRECIO A PRICEHOUR
-    console.log(priceHour.value);
-x
-
+    price.innerText = array[1];  //PASAR VALOR DE PRECIO A PRICEHOUR
+    //priceHour.setAttribute('value', array[1]);
+    // console.log(priceHour.value);
+    
     serviceMyores(array[0]); 
 }
 
 function separarComaBar(value) {
     let array = value.split(',');
-    priceBar.innerText = +array[1] + ".00";
+    priceBar.innerText = array[1];
     calcularBar(unidadesBar.value);
 }
 
@@ -70,8 +70,8 @@ function serviceMyores(service) {
         document.getElementById('persons').style.display="none";
     } else {
         bar.style.display="none";
-        priceHour.style.display="block";
-        document.getElementById('persons').style.display="block ";
+        //priceHour.style.display="block";
+        //document.getElementById('persons').style.display="block ";
      
     }
 }
