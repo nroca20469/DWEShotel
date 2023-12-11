@@ -1,7 +1,7 @@
 <div class="container-lg">
     <div class="text-center">
-                <h2>Do you wanna come?</h2>
-                <p class="lead">Tell us when are you willing to come</p>
+                <h2>Would you like to visit us?</h2>
+                <p class="lead"> Tell us when you want to stay with us</p>
             </div>
         <div class="row justify-content-center my-5">
             <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_reservation_select_availables.php" method="POST">

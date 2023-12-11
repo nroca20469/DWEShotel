@@ -42,7 +42,7 @@
                     $isDeleted = mysqli_query($conn, $sqlDeleteCustomer);
 
                     $message = 'The customer has been deleted';
-                     mysqli_free_result($isDeleted);
+                    mysqli_free_result($isDeleted);
                 }
             }
             mysqli_close($conn);

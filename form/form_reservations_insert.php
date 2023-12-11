@@ -14,7 +14,7 @@
         <input type="number" class="form-control" id="roomNum" name="roomNum" value="<?php echo $room_num; ?>">
     </div> 
     <div class="mb-3 d-none">
-        <label for="roomPrice" class="form-label">Date in</label>
+        <label for="roomPrice" class="form-label">Room Price</label>
         <input type="number" class="form-control" step="0.01" id="roomPrice" name="roomPrice" value="<?php echo $room_price; ?>"> 
     </div>
     <button class="btn btn-secondary" type="submit" name="submit">Book</button>

@@ -14,6 +14,17 @@
         $customer_problematic = $_POST['problematic'];
         $customer_status = $_POST['customerStatus'];
         $boton_aviso;
+        $customer_image = $_FILES['customerImg']['name'] ?? null;
+
+        if($customer_image != null){
+            $customer_tmp = $_FILES['customerImg']['tmp_name'];
+            $customer_img_name = explode('.', $customer_image);
+            $customer_img_name[0] = $customer_dni;
+            $img_name = $customer_img_name[0] . '.' . $customer_img_name[1];
+            $img_destination = "/student045/dwes/img/customers/$img_name";
+
+            move_uploaded_file($customer_tmp, $_SERVER['DOCUMENT_ROOT'] . $img_destination);
+        }
 
         echo " <div class=\"text-center\">
                 <h5>Customer ID : $customer_id </h5>
@@ -25,18 +36,33 @@
         //Query to select the customer
         if($role = 'admin'){
             $customer_role = $_POST['customerRole'];
-
-            $query_customer_update = "UPDATE `045_users` 
-            SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
-            `customer_phone_number`='$customer_phone_number',`customer_role` = '$customer_role', 
-            `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
-            WHERE `customer_id` = $customer_id";
+            if($customer_image != null) {
+                $query_customer_update = "UPDATE `045_users` 
+                SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
+                `customer_phone_number`='$customer_phone_number',`customer_role` = '$customer_role', customer_image = '$img_destination',
+                `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
+                WHERE `customer_id` = $customer_id";
+            } else if($customer_image == null){
+                $query_customer_update = "UPDATE `045_users` 
+                    SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
+                    `customer_phone_number`='$customer_phone_number',`customer_role` = '$customer_role',
+                    `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
+                    WHERE `customer_id` = $customer_id";
+            }
         } else {
-            $query_customer_update = "UPDATE `045_users` 
-            SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
-            `customer_phone_number`='$customer_phone_number', 
-            `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
-            WHERE `customer_id` = $customer_id";
+            if($customer_image != null) {
+                $query_customer_update = "UPDATE `045_users` 
+                SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
+                `customer_phone_number`='$customer_phone_number',customer_image = '$img_destination',
+                `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
+                WHERE `customer_id` = $customer_id";
+            } else if($customer_image == null){
+                $query_customer_update = "UPDATE `045_users` 
+                SET `customer_forename`= '$customer_forename',`customer_lastname`='$customer_lastname',`customer_dni`='$customer_dni',`customer_email`='$customer_email',
+                `customer_phone_number`='$customer_phone_number',
+                `customer_description`= '{\n\"vip\": $customer_vip, \n\"problematic\": $customer_problematic \n}',`customer_status`='$customer_status' 
+                WHERE `customer_id` = $customer_id";
+            }
         }
         
 

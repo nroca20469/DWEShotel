@@ -14,11 +14,11 @@ SET time_zone = "+00:00";
 -- Base de datos: `hotel`
 
 -- DROP TABLES IF EXISTS
-DROP TABLE IF EXISTS `045_tickets`;
-DROP TABLE IF EXISTS `045_reservations`;
-DROP TABLE IF EXISTS `045_services`;
-DROP TABLE IF EXISTS `045_users`;
-DROP TABLE IF EXISTS `045_rooms`;
+-- DROP TABLE `045_tickets`;
+-- DROP TABLE `045_services`;
+DROP TABLE `045_reservations`;
+DROP TABLE `045_users`;
+DROP TABLE `045_rooms`;
 
 -- CREATE TABLES
 

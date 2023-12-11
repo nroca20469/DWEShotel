@@ -1,28 +1,5 @@
-    <footer class="mt-3 pb-4 px-4 fixed-bottom bg-white">
-       <!-- <a href="#" class="navbar-brand">
-            <div>
-                <span class="fw-bold secondary-color">
-                Contact
-            </span>
-            <?php //if($role == "anonymous"){ ?>
-
-
-                <div class="containter d-block d-lg-none">
-                    <div class="row">
-                        <div class="col text-end">
-                            <a href="/student045/dwes/form/form_login.php"><button class="btn btn-secondary pe-2">Log In</button></a>
-                            <a href="/student045/dwes/form/form_register.php"><button class="btn btn-secondary">Register</button></a>                
-                        </div>
-                    </div>  
-                </div>
-
-            <?php //}else { ?>
-                <span class="text-end d-block d-lg-none">
-                    <a href="/student045/dwes/db/db_logout  .php"><button class="btn btn-secondary pe-2">Log Out</button></a>              
-                </span>
-            <?php //} ?> -->
-
-            </div>
+    <footer class="mt-3 pb-4 px-4 bg-white">
+        </div>
             <nav class="navbar">
                  <div class="container-xxl"> 
                     <span class="fw-bold">
@@ -41,6 +18,11 @@
                                 <a href="/student045/dwes/db/db_logout.php" class="text-secondary link-underline link-underline-opacity-0">Log Out</a> 
                             </span>
                         <?php } ?>
+                        <span class="fst-italic">
+                            <a href="/student045/dwes/online_manual.php" class="text-dark link-underline link-underline-opacity-0">
+                                Online Manual
+                            </a>
+                        </span>
                     </div>
                  </div>
             </nav>

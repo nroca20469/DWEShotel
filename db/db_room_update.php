@@ -1,6 +1,8 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/header.php')?>
 
 <?php 
+
+    $boton_aviso;
     if(isset($_POST['submit'])) {
         //Crear variables
         $room_number = $_POST['roomNum'];
@@ -8,7 +10,7 @@
         $room_state = $_POST['roomState'];
         $room_status = $_POST['roomStatus'];
         $room_price = $_POST['roomPrice'];
-        $boton_aviso;
+       
 
         //Ammenities
         $tv = $_POST['tv'];
@@ -17,6 +19,17 @@
         $extra_bed = $_POST['extraBed'];
         $bed_type = $_POST['bedType'];
         $price_per_nigth  = $_POST['priceNight'];
+
+        //Imagen
+        $room_img = $_FILES['roomImg']['name'] ?? null;
+        $room_tmp = $_FILES['roomImg']['tmp_name'];
+        $room_img_name = explode('.', $room_img);
+        $room_img_name[0] = $room_number;
+        $img_name = $room_img_name[0] . '.' . $room_img_name[1];
+        $img_destination = "/student045/dwes/img/rooms/$img_name";
+
+        //Img
+        move_uploaded_file($room_tmp, $_SERVER['DOCUMENT_ROOT'] . $img_destination);
 
         echo " <div class=\"text-center\">
             <h5>Room Number: $room_number </h5>
@@ -38,7 +51,7 @@
 
         //Comprovar q los datos son correctos
         $sql_update_room = "UPDATE `045_rooms` 
-        SET `room_category`='$room_type',`room_state`='$room_state',`room_status`='$room_status',`room_price`= $room_price, `room_description` = '$room_description'
+        SET `room_category`='$room_type',`room_state`='$room_state',`room_status`='$room_status',`room_price`= $room_price, `room_description` = '$room_description', room_image = '$img_destination'
         WHERE room_number = $room_number";
         // $result = mysqli_query($conn, $sql_update_room);
 
@@ -49,7 +62,6 @@
             $boton_aviso = "Your room is not updated, see if there is any problem with your data    <a href=\"/student045/dwes/form/from_room_update_call.php\"><button type=\"button\" class=\"btn btn-secondary ms-2\"> Return back </button></a>";
         }
         
-        mysqli_free_result($result);
         mysqli_close($conn);
 
 

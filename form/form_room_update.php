@@ -41,12 +41,12 @@ $tv = $room_desciption_array -> TV;
 
 ?>
     
-    <div class="container-lg">
+    <div class="container-lg mb-4">
         <div class="text-center">
             <h2>Update Room</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_room_update.php" method="POST">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_room_update.php" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="roomNum" class="form-label">Room Number</label>
                     <input type="numeric" class="form-control" id="roomNum" name="roomNum" value="<?php echo $room_number; ?>">
@@ -135,6 +135,11 @@ $tv = $room_desciption_array -> TV;
                         ?>
                     </select>
                 </div>  
+
+                <div class="mb-3">
+                    <label for="roomImg" class="form-label"> Room Image </label>
+                    <input class="form-control" type="file" name="roomImg">
+                </div>
 
                 <div class="pt-1 text-center">
                     <label for="internal" class="form-label"><h5>Ammenities per room</h5></label>
@@ -264,7 +269,7 @@ $tv = $room_desciption_array -> TV;
             </div>
                 
             <?php } ?>
-            <div class="d-grid gap-2 col-4 mx-auto m-2">
+            <div class="d-grid gap-2 col-4 mx-auto m-2 mb-4">
                 <button class="btn btn-secondary" type="submit" name="submit"> Submit </button>
             </div>
 

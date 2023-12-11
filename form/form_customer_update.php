@@ -13,6 +13,7 @@ $customer_dni;
 $customer_description;
 $customer_status;
 $boton_aviso;
+$customer_img;
 
 //Connectar a db
 include($_SERVER['DOCUMENT_ROOT'] . '/student045/dwes/db/connect_db.php');
@@ -42,7 +43,8 @@ if($connect->num_rows == 0){
     $customer_dni = $customer['customer_dni'];
     $customer_description = $customer['customer_description'];
     $customer_status = $customer['customer_status'];
-}
+    $customer_img = $customer['customer_image'];
+    }
 $customer_desciption_array = json_decode($customer_description);
 $vip = $customer_desciption_array -> vip;
 $problematic = $customer_desciption_array -> problematic;
@@ -55,7 +57,7 @@ $problematic = $customer_desciption_array -> problematic;
             <h2>Update Customer</h2>
         </div>
         <div class="row justify-content-center my-5">
-            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_update.php" method="POST" id="bookRomms">
+            <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_update.php" method="POST" id="bookRomms" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="customerID" class="form-label">Customer ID</label>
                     <input type="text" class="form-control" id="customerID" name="customerID" readonly value = <?php echo $customer_id; ?> >
@@ -101,6 +103,22 @@ $problematic = $customer_desciption_array -> problematic;
                     <label for="customerNumberPhone" class="form-label">Phone Number</label>
                     <input type="text" class="form-control" name="customerNumberPhone" value = <?php echo $customer_phone_number ?>>
                 </div>
+                
+                <!-- Image -->
+                <div class="mb-3">
+                    <label for="customerImg" class="form-label">Image</label><br>
+                    <?php if(!$customer_img) {
+                        echo "<input type=\"file\" class=\"form-control\" name=\"customerImg\">";
+                    } else {
+                        echo '<div class="d-flex justify-content-center">';
+                        echo '<img src="' . $customer_img . '" alt="customer_img"  name="img" width="150px">';
+                        echo "<input type=\"file\" class=\"mt-4 ms-2 form-control\" name=\"customerImg\" style=\"height: 38px !important; width: 100% !important;\">";
+                        echo '</div>';
+                       
+                    } 
+                    ?>
+                </div>
+
                 <div class="mb-3">
                     <label for="customerStatus" class="form-label">Status</label>
                     <select class="form-select" aria-label="Default select example" name="customerStatus">

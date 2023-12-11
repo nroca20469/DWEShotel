@@ -13,7 +13,7 @@
             </div>
 
             <div class="modal-body">
-                Are you concient that by canceling tthis reservation, you will not longer own the days to come to our hotel?
+                You must know, that by canceling this reservation, you will not longer be able to visit our hotel these days, are you sure?
             </div>
 
             <div class="modal-footer">

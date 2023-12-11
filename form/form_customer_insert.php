@@ -7,7 +7,7 @@
             <p class="lead">Insert all the data that we ask for, thank you</p>
         </div>
         <div class="row justify-content-center my-5">
-        <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_insert.php" method="POST">
+        <form class="col-lg-6 mb-3" action="/student045/dwes/db/db_customer_insert.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                     <label for="surname" class="form-label">Surname</label>
                     <input type="text" class="form-control" id="surname" name="surname">
@@ -27,6 +27,10 @@
                 <div class="mb-3">
                     <label for="customerNumberPhone" class="form-label">Phone Number</label>
                     <input type="text" class="form-control" name="customerNumberPhone">
+                </div>
+                <div class="mb-3">
+                    <label for="customerImg" class="form-label">Image</label>
+                    <input type="file" class="form-control" name="customerImg">
                 </div>
                 <div class="mb-3">
                     <label for="vip" class="form-label">VIP</label>

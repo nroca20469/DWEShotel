@@ -18,6 +18,11 @@
         <div class="ms-4">';
 
         foreach ($rooms as $room){
+            if($room['room_image'] != null) {
+                echo "<img src=\"{$room['room_image']}\" alt=\"room_image\" width=\"150px\" class=\"me-4 mt-2\">"; 
+            } else {
+                echo "<img src=\"/student045/dwes/img/rooms/suit3.jpg\" alt=\"room_image\" width=\"150px\" class=\"me-4 mt-2\">";
+            }
             echo ($room['room_number'] . ' ' . $room['room_category'] . ' ' . $room['room_price']);
             if($role == 'admin'){
                 echo "<span class=\"fw-thin secondary-color btn-group m-2\">

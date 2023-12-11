@@ -10,9 +10,7 @@
             -Room price
             -Room Number
             -Room Status
-
-        Sigue sin funcionar:
-             -Room-Ammenities --> se guarda UN SOLO VALOR, ver como guardar mas de uno
+            -Room-Ammenities --> listo  
         */ 
 
         $room_number;
@@ -23,8 +21,7 @@
         $bed_type;
         $room_ammenities;
         $boton_aviso;
-        $room_img;
-        
+        $room_img;        
         
         if(isset($_POST['submit'])){
             $room_number = $_POST['roomNum'] ?? null;

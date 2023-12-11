@@ -48,9 +48,9 @@
                 $_SESSION['customer_id'] = $customer_id;
                 $_SESSION['role'] = $role;
 
-                echo $_SESSION['name'];
-                echo $_SESSION['customer_id'];
-                echo $_SESSION['role'];
+                // echo $_SESSION['name'];
+                // echo $_SESSION['customer_id'];
+                // echo $_SESSION['role'];
                 echo "<script>location.href = '/student045/dwes/index.php';</script>";
                 mysqli_free_result($result, $comparePasswords, $boton_aviso);
                 mysqli_close($conn);
